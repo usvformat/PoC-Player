@@ -12,6 +12,7 @@
     <used-plugins>
         <plugin author="Scirra" id="Button" version="1">Button</plugin>
         <plugin author="Scirra" id="NodeWebkit" version="1">NW.js</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
     </used-plugins>
     <used-behaviors />
@@ -54,13 +55,31 @@
         <object-type name="VideoSelect" sid="901854339193771">
             <plugin id="Button" />
         </object-type>
+        <object-type name="F1" sid="275615192229513">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="646183722588867" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="F2" sid="515607068908930">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="219910450457165" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
-        <layout>Layout 1.xml</layout>
+        <layout>Loader.xml</layout>
+        <layout>Player.xml</layout>
     </layout-folder>
     <event-folder>
-        <event-sheet>Event sheet 1.xml</event-sheet>
+        <event-sheet>Loader sheet.xml</event-sheet>
+        <event-sheet>Player sheet.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="NWjs" uid="0" />
