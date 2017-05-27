@@ -6,7 +6,7 @@
         <variable constant="0" name="CurrentPatch" sid="715799251399842" static="0" type="text"></variable>
         <event-block sid="669780589778628">
             <conditions>
-                <condition id="0" name="On clicked" sid="443601748455758" type="VideoSelect" />
+                <condition id="0" name="On clicked" sid="443601748455758" type="FolderSelect" />
             </conditions>
             <actions>
                 <action id="7" name="Show folder dialog" sid="127145060029099" type="NWjs" />
@@ -17,35 +17,36 @@
                 <condition id="3" name="On folder dialog OK" sid="450937050686197" type="NWjs" />
             </conditions>
             <actions>
-                <action id="2" name="Set visible" sid="269776445014986" type="VideoSelect">
+                <action id="2" name="Set visible" sid="269776445014986" type="FolderSelect">
                     <param id="0" name="Visibility">0</param>
                 </action>
                 <action id="-9" name="Set value" sid="805369241574026" type="System">
                     <param id="0" name="Variable">CurrentPatch</param>
                     <param id="1" name="Value">NWjs.ChosenPath</param>
                 </action>
-                <action id="0" name="Set text" sid="935464602503001" type="Text">
-                    <param id="0" name="Text">CurrentPatch</param>
+                <action id="0" name="Set text" sid="436171622149915" type="Text">
+                    <param id="0" name="Text">&quot;Now, select a video in the selected folder:&quot;</param>
                 </action>
-                <action id="5" name="List files" sid="555952040514953" type="NWjs">
-                    <param id="0" name="Path">CurrentPatch</param>
-                </action>
-                <action id="2" name="Set visible" sid="125496746036337" type="VideoList">
+                <action id="2" name="Set visible" sid="566291995379617" type="VideoSelect">
                     <param id="0" name="Visibility">1</param>
                 </action>
-                <action id="7" name="Add item" sid="655547637469062" type="VideoList">
-                    <param id="0" name="Text">NWjs.ListAt(0)</param>
-                </action>
-                <action id="7" name="Add item" sid="856610336388905" type="VideoList">
-                    <param id="0" name="Text">NWjs.ListAt(1)</param>
-                </action>
-                <action id="7" name="Add item" sid="488196924814248" type="VideoList">
-                    <param id="0" name="Text">NWjs.ListAt(2)</param>
-                </action>
-                <action id="7" name="Add item" sid="926714211855824" type="VideoList">
-                    <param id="0" name="Text">NWjs.ListAt(3)</param>
+            </actions>
+        </event-block>
+        <event-block sid="272626066623430">
+            <conditions>
+                <condition id="0" name="On clicked" sid="630678001082670" type="VideoSelect" />
+            </conditions>
+            <actions>
+                <action id="6" name="Show open dialog" sid="980230725779373" type="NWjs">
+                    <param id="0" name="Accept">&quot;.usv&quot;</param>
                 </action>
             </actions>
+        </event-block>
+        <event-block sid="254941666924308">
+            <conditions>
+                <condition id="2" name="On open dialog OK" sid="408474906881708" type="NWjs" />
+            </conditions>
+            <actions />
         </event-block>
     </events>
 </c2eventsheet>

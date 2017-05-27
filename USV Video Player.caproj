@@ -11,7 +11,6 @@
     <saved-with-version>24400</saved-with-version>
     <used-plugins>
         <plugin author="Scirra" id="Button" version="1">Button</plugin>
-        <plugin author="Scirra" id="List" version="1">List</plugin>
         <plugin author="Scirra" id="NodeWebkit" version="1">NW.js</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
     </used-plugins>
@@ -49,11 +48,11 @@
         <object-type name="Text" sid="625136079997029">
             <plugin id="Text" />
         </object-type>
-        <object-type name="VideoSelect" sid="390521977622552">
+        <object-type name="FolderSelect" sid="390521977622552">
             <plugin id="Button" />
         </object-type>
-        <object-type name="VideoList" sid="342394883307549">
-            <plugin id="List" />
+        <object-type name="VideoSelect" sid="901854339193771">
+            <plugin id="Button" />
         </object-type>
     </object-folder>
     <families />
