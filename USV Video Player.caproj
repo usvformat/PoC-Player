@@ -12,6 +12,7 @@
     <used-plugins>
         <plugin author="Scirra" id="Button" version="1">Button</plugin>
         <plugin author="Scirra" id="NodeWebkit" version="1">NW.js</plugin>
+        <plugin author="Scirra" id="Particles" version="1">Particles</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
     </used-plugins>
@@ -70,6 +71,44 @@
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
             </animation-folder>
+        </object-type>
+        <object-type name="Folder" sid="735318986576894">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="192296993999326" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.501706" original-source="C:\Users\World.wd\Downloads\Folder.png">
+                        <collision-poly>
+                            <point x="0.0487013" y="0.0511945" />
+                            <point x="0.5" y="0.1843" />
+                            <point x="0.824675" y="0.1843" />
+                            <point x="0.954545" y="0.498294" />
+                            <point x="0.922078" y="0.918089" />
+                            <point x="0.5" y="0.955631" />
+                            <point x="0.0779221" y="0.918089" />
+                            <point x="0.0454545" y="0.498294" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Videos" sid="854669064969561">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="450704071794024" speed="5">
+                    <frame duration="1" hotspotX="0.501618" hotspotY="0.5" original-source="C:\Users\World.wd\Downloads\Videos.png">
+                        <collision-poly>
+                            <point x="0.0453074" y="0.0472973" />
+                            <point x="0.954693" y="0.0472973" />
+                            <point x="0.954693" y="0.952703" />
+                            <point x="0.0453074" y="0.952703" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Particles" sid="525988393301073">
+            <plugin id="Particles" />
+            <texture original-source="C:\Users\World.wd\Desktop\Videos.png" />
         </object-type>
     </object-folder>
     <families />
