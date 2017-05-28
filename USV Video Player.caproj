@@ -11,6 +11,7 @@
     <saved-with-version>24400</saved-with-version>
     <used-plugins>
         <plugin author="Scirra" id="Button" version="1">Button</plugin>
+        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="NodeWebkit" version="1">NW.js</plugin>
         <plugin author="Scirra" id="Particles" version="1">Particles</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
@@ -110,6 +111,13 @@
             <plugin id="Particles" />
             <texture original-source="C:\Users\World.wd\Desktop\Videos.png" />
         </object-type>
+        <object-type name="Particles2" sid="702925724387040">
+            <plugin id="Particles" />
+            <texture original-source="C:\Users\World.wd\Desktop\Player\Animations\Folder\Default\000.png" />
+        </object-type>
+        <object-type name="Mouse" sid="227428137557171">
+            <plugin id="Mouse" />
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
@@ -122,6 +130,7 @@
     </event-folder>
     <global-instances>
         <global-instance type="NWjs" uid="0" />
+        <global-instance type="Mouse" uid="10" />
     </global-instances>
     <sounds-folder />
     <music-folder />

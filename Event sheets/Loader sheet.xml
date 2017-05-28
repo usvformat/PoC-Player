@@ -4,6 +4,16 @@
     <name>Loader sheet</name>
     <events>
         <variable constant="0" name="CurrentPatch" sid="715799251399842" static="0" type="text"></variable>
+        <event-block sid="521639679273424">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="147780016108864" type="System" />
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="214991536541523" type="Particles2">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
         <event-block sid="669780589778628">
             <conditions>
                 <condition id="0" name="On clicked" sid="443601748455758" type="FolderSelect" />
@@ -62,6 +72,31 @@
             <actions>
                 <action id="-2" name="Go to layout" sid="701750643901002" type="System">
                     <param id="0" name="Layout">Player</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block any="1" sid="117444483388611">
+            <conditions>
+                <condition id="7" name="Cursor is over object" sid="614026484007144" type="Mouse">
+                    <param id="0" name="Object">FolderSelect</param>
+                </condition>
+                <condition id="7" name="Cursor is over object" sid="967356973604803" type="Mouse">
+                    <param id="0" name="Object">VideoSelect</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="625991673715113" type="Particles2">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="391540368341419">
+            <conditions>
+                <condition id="-22" name="Else" sid="975268062177846" type="System" />
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="501454838029907" type="Particles2">
+                    <param id="0" name="Visibility">0</param>
                 </action>
             </actions>
         </event-block>
