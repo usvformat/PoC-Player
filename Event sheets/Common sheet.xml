@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Common sheet</name>
+    <events>
+        <variable constant="0" name="CurrentPatch" sid="715799251399842" static="0" type="text"></variable>
+        <variable constant="0" name="Fullscreen" sid="958196169551487" static="0" type="number">0</variable>
+        <event-block sid="696702043638083">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="818583568708106" type="Keyboard">
+                    <param id="0" name="Key">122 (F11)</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="374732914582340">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="263203246941211" type="System">
+                            <param id="0" name="Variable">Fullscreen</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="151540407503549" type="System">
+                            <param id="0" name="Variable">Fullscreen</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="952152548665820">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="586609608739105" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="344870755797113" type="System">
+                            <param id="0" name="Variable">Fullscreen</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="953258396757741">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="719956237425251" type="System">
+                    <param id="0" name="Variable">Fullscreen</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="10" name="Request fullscreen" sid="882353743672652" type="Browser">
+                    <param id="0" name="Mode">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="334723095381991">
+            <conditions>
+                <condition id="-22" name="Else" sid="605755265587945" type="System" />
+            </conditions>
+            <actions>
+                <action id="11" name="Cancel fullscreen" sid="202113153424638" type="Browser" />
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

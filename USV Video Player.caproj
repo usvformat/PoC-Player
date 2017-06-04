@@ -2,7 +2,7 @@
 <c2project>
     <name>USV Video Player</name>
     <description></description>
-    <version>1.0.0.0</version>
+    <version>1.0</version>
     <author></author>
     <author-email></author-email>
     <author-website>http://</author-website>
@@ -10,12 +10,19 @@
     <unique-id>2q0m3k6vwlhcl</unique-id>
     <saved-with-version>24400</saved-with-version>
     <used-plugins>
+        <plugin author="Scirra" id="AJAX" version="1">AJAX</plugin>
+        <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
         <plugin author="Scirra" id="Button" version="1">Button</plugin>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="NodeWebkit" version="1">NW.js</plugin>
         <plugin author="Scirra" id="Particles" version="1">Particles</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
+        <plugin author="Scirra" id="gamepad" version="1">Gamepad</plugin>
+        <plugin author="Scirra" id="progressbar" version="1">Progress bar</plugin>
+        <plugin author="Scirra" id="sliderbar" version="1">Slider bar</plugin>
     </used-plugins>
     <used-behaviors />
     <used-effects />
@@ -118,6 +125,104 @@
         <object-type name="Mouse" sid="227428137557171">
             <plugin id="Mouse" />
         </object-type>
+        <object-type name="Keyboard" sid="798315009609002">
+            <plugin id="Keyboard" />
+        </object-type>
+        <object-type name="Touch" sid="739518643700919">
+            <plugin id="Touch" />
+        </object-type>
+        <object-type name="Gamepad" sid="493423718963920">
+            <plugin id="gamepad" />
+        </object-type>
+        <object-type name="Browser" sid="950329162976881">
+            <plugin id="Browser" />
+        </object-type>
+        <object-type name="AJAX" sid="512987206722378">
+            <plugin id="AJAX" />
+        </object-type>
+        <object-type name="Button" sid="526286355552979">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="Type" sid="482747899153931" type="number" />
+            </instance-variables>
+            <animation-folder>
+                <animation-folder name="Fullscreen">
+                    <animation framecount="1" loop="0" name="Full" pingpong="0" repeatcount="1" repeatto="0" sid="602643617783691" speed="5">
+                        <frame duration="1" hotspotX="0.518519" hotspotY="0.518519" original-source="C:\Users\World.wd\Desktop\Fullscreen.png">
+                            <collision-poly>
+                                <point x="0.148148" y="0.148148" />
+                                <point x="0.851852" y="0.148148" />
+                                <point x="0.851852" y="0.851852" />
+                                <point x="0.148148" y="0.851852" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="4" loop="0" name="FullHover" pingpong="0" repeatcount="1" repeatto="0" sid="993917619532639" speed="14">
+                        <frame duration="1" hotspotX="0.518519" hotspotY="0.518519" original-source="C:\Users\World.wd\Desktop\Untitled1.png">
+                            <collision-poly>
+                                <point x="0.111111" y="0.111111" />
+                                <point x="0.888889" y="0.111111" />
+                                <point x="0.888889" y="0.888889" />
+                                <point x="0.111111" y="0.888889" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.518519" hotspotY="0.518519" original-source="C:\Users\World.wd\Desktop\Untitled2.png">
+                            <collision-poly>
+                                <point x="0.0740741" y="0.0740741" />
+                                <point x="0.925926" y="0.0740741" />
+                                <point x="0.925926" y="0.925926" />
+                                <point x="0.0740741" y="0.925926" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.518519" hotspotY="0.518519" original-source="C:\Users\World.wd\Desktop\Untitled3.png">
+                            <collision-poly>
+                                <point x="0.037037" y="0.037037" />
+                                <point x="0.962963" y="0.037037" />
+                                <point x="0.962963" y="0.962963" />
+                                <point x="0.037037" y="0.962963" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.518519" hotspotY="0.518519" original-source="C:\Users\World.wd\Desktop\Untitled4.png" />
+                    </animation>
+                    <animation framecount="4" loop="0" name="FullFromHover" pingpong="0" repeatcount="1" repeatto="0" sid="947543867662024" speed="14">
+                        <frame duration="1" hotspotX="0.518519" hotspotY="0.518519" />
+                        <frame duration="1" hotspotX="0.518519" hotspotY="0.518519">
+                            <collision-poly>
+                                <point x="0.037037" y="0.037037" />
+                                <point x="0.962963" y="0.037037" />
+                                <point x="0.962963" y="0.962963" />
+                                <point x="0.037037" y="0.962963" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.518519" hotspotY="0.518519">
+                            <collision-poly>
+                                <point x="0.0740741" y="0.0740741" />
+                                <point x="0.925926" y="0.0740741" />
+                                <point x="0.925926" y="0.925926" />
+                                <point x="0.0740741" y="0.925926" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.518519" hotspotY="0.518519">
+                            <collision-poly>
+                                <point x="0.111111" y="0.111111" />
+                                <point x="0.888889" y="0.111111" />
+                                <point x="0.888889" y="0.888889" />
+                                <point x="0.111111" y="0.888889" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="965079303589195" speed="5">
+                    <frame duration="1" hotspotX="0.518519" hotspotY="0.518519" original-source="C:\Users\World.wd\Desktop\Button.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="ProgressBar" sid="143211906011697">
+            <plugin id="progressbar" />
+        </object-type>
+        <object-type name="SliderBar" sid="347504293693036">
+            <plugin id="sliderbar" />
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
@@ -127,20 +232,34 @@
     <event-folder>
         <event-sheet>Loader sheet.xml</event-sheet>
         <event-sheet>Player sheet.xml</event-sheet>
+        <event-sheet>Common sheet.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="NWjs" uid="0" />
         <global-instance type="Mouse" uid="10" />
+        <global-instance type="Keyboard" uid="11" />
+        <global-instance type="Touch" uid="12">
+            <properties>
+                <use-mouse-input>Yes</use-mouse-input>
+            </properties>
+        </global-instance>
+        <global-instance type="Gamepad" uid="13">
+            <properties>
+                <analog-deadzone>25</analog-deadzone>
+            </properties>
+        </global-instance>
+        <global-instance type="Browser" uid="14" />
+        <global-instance type="AJAX" uid="15" />
     </global-instances>
     <sounds-folder />
     <music-folder />
     <files-folder>
         <file-folder name="Icons">
-            <file name="icon-16.png" />
-            <file name="icon-32.png" />
             <file name="icon-114.png" />
             <file name="icon-128.png" />
+            <file name="icon-16.png" />
             <file name="icon-256.png" />
+            <file name="icon-32.png" />
             <file name="loading-logo.png" />
         </file-folder>
     </files-folder>

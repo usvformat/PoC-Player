@@ -3,11 +3,147 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Player sheet</name>
     <events>
+        <include>Common sheet</include>
         <event-block sid="964654140858673">
             <conditions>
                 <condition id="-2" name="On start of layout" sid="611817032465434" type="System" />
             </conditions>
+            <actions>
+                <action id="2" name="Set CSS style" sid="242924927805249" type="SliderBar">
+                    <param id="0" name="Property name">&quot;-webkit-appearance&quot;</param>
+                    <param id="1" name="Value">&quot;none&quot;</param>
+                </action>
+                <action id="2" name="Set CSS style" sid="840801835326976" type="SliderBar">
+                    <param id="0" name="Property name">&quot;background&quot;</param>
+                    <param id="1" name="Value">&quot;transparent&quot;</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="126824507013162">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="786868372900712" type="Button">
+                            <param id="0" name="Instance variable">Type</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="283394077743122" type="Button">
+                            <param id="0" name="Animation">&quot;Full&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="112200086058272">
+            <conditions>
+                <condition id="7" name="Cursor is over object" sid="404630753152897" type="Mouse">
+                    <param id="0" name="Object">Button</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="168525647073269" type="Button">
+                    <param id="0" name="Instance variable">Type</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="764183976641553" type="System" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="767742659644354" type="Button">
+                    <param id="0" name="Animation">&quot;FullHover&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="-10" name="Set value" sid="271744619643348" type="Button">
+                    <param id="0" name="Instance variable">Type</param>
+                    <param id="1" name="Value">00</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="315677652564968">
+            <conditions>
+                <condition id="7" inverted="1" name="Cursor is over object" sid="238674210110753" type="Mouse">
+                    <param id="0" name="Object">Button</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="566764724424804" type="Button">
+                    <param id="0" name="Instance variable">Type</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">00</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="459624545634474" type="System" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="743515492742683" type="Button">
+                    <param id="0" name="Animation">&quot;FullFromHover&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="-10" name="Set value" sid="477043538149751" type="Button">
+                    <param id="0" name="Instance variable">Type</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="468940996393871">
+            <conditions>
+                <condition id="3" name="On touched object" sid="198463802879821" type="Touch">
+                    <param id="0" name="Object">Button</param>
+                </condition>
+            </conditions>
             <actions />
+            <sub-events>
+                <event-block any="1" sid="721326215911508">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="531514768574601" type="Button">
+                            <param id="0" name="Instance variable">Type</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="306620923143099" type="Button">
+                            <param id="0" name="Instance variable">Type</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">00</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="891183912738980">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="501017408213254" type="System">
+                                    <param id="0" name="Variable">Fullscreen</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="619729932910661" type="System">
+                                    <param id="0" name="Variable">Fullscreen</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="401144884741863">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="491582236933310" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="116054579509328" type="System">
+                                    <param id="0" name="Variable">Fullscreen</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="165776098001890">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="987365603459428" type="System" />
+            </conditions>
+            <actions>
+                <action id="3" name="Set progress" sid="439505732767977" type="ProgressBar">
+                    <param id="0" name="Value">SliderBar.Value</param>
+                </action>
+            </actions>
         </event-block>
     </events>
 </c2eventsheet>

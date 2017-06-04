@@ -3,7 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Loader sheet</name>
     <events>
-        <variable constant="0" name="CurrentPatch" sid="715799251399842" static="0" type="text"></variable>
+        <include>Common sheet</include>
         <event-block sid="521639679273424">
             <conditions>
                 <condition id="-2" name="On start of layout" sid="147780016108864" type="System" />
