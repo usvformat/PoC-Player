@@ -1,4 +1,5 @@
-# Player
+# USV PoC Player
+This is an PoC (proof-of-concept) player for Universal Smart Video format.
 
 ## Discussion topics
 https://www.construct.net/forum/construct-2/works-in-progress-feedback-requests-24/video-player-made-in-c2-125308
