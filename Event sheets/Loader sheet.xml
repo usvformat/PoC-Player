@@ -19,12 +19,18 @@
                 <condition id="0" name="On clicked" sid="443601748455758" type="FolderSelect" />
             </conditions>
             <actions>
-                <action id="7" name="Show folder dialog" sid="127145060029099" type="NWjs" />
+                <action id="20" name="Show dialog" sid="746547800494206" type="Electron">
+                    <param id="0" name="Title">&quot;&quot;</param>
+                    <param id="1" name="Default path">&quot;&quot;</param>
+                    <param id="2" name="Confirmation text (optional)">&quot;&quot;</param>
+                    <param id="3" name="Filters (TODO)">&quot;&quot;</param>
+                    <param id="4" name="Properties">&quot;openDirectory&quot;</param>
+                </action>
             </actions>
         </event-block>
-        <event-block sid="667592704617588">
+        <event-block sid="697228166857039">
             <conditions>
-                <condition id="3" name="On folder dialog OK" sid="450937050686197" type="NWjs" />
+                <condition id="8" name="On validate dialog" sid="581735086087553" type="Electron" />
             </conditions>
             <actions>
                 <action id="2" name="Set visible" sid="269776445014986" type="FolderSelect">
@@ -35,7 +41,7 @@
                 </action>
                 <action id="-9" name="Set value" sid="805369241574026" type="System">
                     <param id="0" name="Variable">CurrentPatch</param>
-                    <param id="1" name="Value">NWjs.ChosenPath</param>
+                    <param id="1" name="Value">Electron.ChosenPath</param>
                 </action>
                 <action id="0" name="Set text" sid="436171622149915" type="Text">
                     <param id="0" name="Text">&quot;Now, select a USV video in the selected folder:&quot;</param>
@@ -53,6 +59,9 @@
                 <action id="4" name="Set font color" sid="746406622250783" type="Text">
                     <param id="0" name="Color">rgb(255, 250, 250)</param>
                 </action>
+                <action id="-2" name="Go to layout" sid="701750643901002" type="System">
+                    <param id="0" name="Layout">Player</param>
+                </action>
             </actions>
         </event-block>
         <event-block sid="272626066623430">
@@ -60,18 +69,8 @@
                 <condition id="0" name="On clicked" sid="630678001082670" type="VideoSelect" />
             </conditions>
             <actions>
-                <action id="6" name="Show open dialog" sid="980230725779373" type="NWjs">
+                <action disabled="1" id="6" name="Show open dialog" sid="980230725779373" type="NWjs">
                     <param id="0" name="Accept">&quot;.usv&quot;</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="254941666924308">
-            <conditions>
-                <condition id="2" name="On open dialog OK" sid="408474906881708" type="NWjs" />
-            </conditions>
-            <actions>
-                <action id="-2" name="Go to layout" sid="701750643901002" type="System">
-                    <param id="0" name="Layout">Player</param>
                 </action>
             </actions>
         </event-block>

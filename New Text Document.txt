@@ -1,0 +1,1 @@
+https://github.com/clappr/clappr/blob/dev/doc/BUILTIN_PLUGINS.md

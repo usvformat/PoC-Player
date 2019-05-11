@@ -39,29 +39,29 @@
                         </action>
                     </actions>
                 </event-block>
+                <event-block sid="953258396757741">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="719956237425251" type="System">
+                            <param id="0" name="Variable">Fullscreen</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="10" name="Request fullscreen" sid="882353743672652" type="Browser">
+                            <param id="0" name="Mode">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="334723095381991">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="605755265587945" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="11" name="Cancel fullscreen" sid="202113153424638" type="Browser" />
+                    </actions>
+                </event-block>
             </sub-events>
-        </event-block>
-        <event-block sid="953258396757741">
-            <conditions>
-                <condition id="-14" name="Compare variable" sid="719956237425251" type="System">
-                    <param id="0" name="Variable">Fullscreen</param>
-                    <param id="1" name="Comparison">0</param>
-                    <param id="2" name="Value">1</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="10" name="Request fullscreen" sid="882353743672652" type="Browser">
-                    <param id="0" name="Mode">0</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="334723095381991">
-            <conditions>
-                <condition id="-22" name="Else" sid="605755265587945" type="System" />
-            </conditions>
-            <actions>
-                <action id="11" name="Cancel fullscreen" sid="202113153424638" type="Browser" />
-            </actions>
         </event-block>
     </events>
 </c2eventsheet>

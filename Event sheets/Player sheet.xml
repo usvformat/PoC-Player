@@ -3,6 +3,8 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Player sheet</name>
     <events>
+        <variable constant="0" name="FrameBuffer" sid="871498872073775" static="0" type="number">0</variable>
+        <variable constant="0" name="Frame" sid="270239002172569" static="0" type="number">0</variable>
         <include>Common sheet</include>
         <event-block sid="964654140858673">
             <conditions>
@@ -16,6 +18,12 @@
                 <action id="2" name="Set CSS style" sid="840801835326976" type="SliderBar">
                     <param id="0" name="Property name">&quot;background&quot;</param>
                     <param id="1" name="Value">&quot;transparent&quot;</param>
+                </action>
+                <action disabled="1" id="0" name="Set text" sid="776318703663688" type="fpsmath">
+                    <param id="0" name="Text">float(3/60)</param>
+                </action>
+                <action disabled="1" id="-16" name="Wait" sid="851833544853004" type="System">
+                    <param id="0" name="Seconds">dt</param>
                 </action>
             </actions>
             <sub-events>
@@ -145,5 +153,111 @@
                 </action>
             </actions>
         </event-block>
+        <event-group description="" sid="383425200527268" title="Buffer">
+            <sub-events>
+                <event-block sid="869670148929622">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="536800601322974" type="System">
+                            <param id="0" name="Variable">FrameBuffer</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">337</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="584218251227525" type="System">
+                            <param id="0" name="Variable">FrameBuffer</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="127672683623643">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="897258693771090" type="System">
+                            <param id="0" name="Interval (seconds)">0.2</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="625975944791155">
+                            <conditions>
+                                <condition id="-12" name="Repeat" sid="844760019027210" type="System">
+                                    <param id="0" name="Count">337</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Request URL" sid="742804355896297" type="AJAX">
+                                    <param id="0" name="Tag">&quot;buffer&quot;</param>
+                                    <param id="1" name="URL">CurrentPatch &amp; &quot;/frames/&quot; &amp; FrameBuffer &amp; &quot;.png&quot;</param>
+                                </action>
+                                <action id="14" name="Log" sid="853574952112598" type="Browser">
+                                    <param id="0" name="Type">0</param>
+                                    <param id="1" name="Message">&quot;Buffer frame &quot; &amp; FrameBuffer &amp; &quot;.png&quot;</param>
+                                </action>
+                                <action id="-10" name="Add to" sid="456185723486647" type="System">
+                                    <param id="0" name="Variable">FrameBuffer</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="336335082172268" type="System">
+                                    <param id="0" name="Seconds">0.01</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="222293829224845" title="Frame playing">
+            <sub-events>
+                <event-block sid="341254743346070">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="897096589286397" type="System">
+                            <param id="0" name="Variable">Frame</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">337</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="692039784402985" type="System">
+                            <param id="0" name="Variable">Frame</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="424692793845970">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="971662171608792" type="System">
+                            <param id="0" name="Interval (seconds)">1</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="619210282609760">
+                            <conditions>
+                                <condition id="-12" name="Repeat" sid="489323558222809" type="System">
+                                    <param id="0" name="Count">11</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="10" name="Load image from URL" sid="672544494219091" type="F2">
+                                    <param id="0" name="URI">CurrentPatch &amp; &quot;/frames/&quot; &amp; Frame &amp; &quot;.png&quot;</param>
+                                    <param id="1" name="Size">0</param>
+                                    <param id="2" name="Cross-origin">0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="862634429249631" type="System">
+                                    <param id="0" name="Seconds">dt</param>
+                                </action>
+                                <action id="-10" name="Add to" sid="223046742648946" type="System">
+                                    <param id="0" name="Variable">Frame</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="596329694460824" type="System">
+                                    <param id="0" name="Seconds">0.1833333333333333</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
     </events>
 </c2eventsheet>
