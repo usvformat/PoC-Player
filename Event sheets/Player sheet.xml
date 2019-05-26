@@ -14,9 +14,6 @@
                 <condition id="-2" name="On start of layout" sid="611817032465434" type="System" />
             </conditions>
             <actions>
-                <action id="2" name="Import CSS file" sid="162669350857337" type="Interactive">
-                    <param id="0" name="CSS file">&quot;style.css&quot;</param>
-                </action>
                 <action id="2" name="Set CSS style" sid="242924927805249" type="SliderBar">
                     <param id="0" name="Property name">&quot;-webkit-appearance&quot;</param>
                     <param id="1" name="Value">&quot;none&quot;</param>
@@ -44,6 +41,45 @@
                     <param id="0" name="Width">640</param>
                     <param id="1" name="Height">360</param>
                     <param id="2" name="Animated">0</param>
+                </action>
+                <action id="19" name="Include Javascript file" sid="856368495132859" type="Interactive">
+                    <param id="0" name="Javascript file">&quot;script.js&quot;</param>
+                </action>
+                <action id="2" name="Import CSS file" sid="593462443144136" type="Interactive">
+                    <param id="0" name="CSS file">&quot;page-common.css&quot;</param>
+                </action>
+                <action id="2" name="Import CSS file" sid="600550204786858" type="Interactive">
+                    <param id="0" name="CSS file">&quot;page-custom.css&quot;</param>
+                </action>
+                <action id="2" name="Import CSS file" sid="407987254780079" type="Interactive">
+                    <param id="0" name="CSS file">&quot;app-common.css&quot;</param>
+                </action>
+                <action id="2" name="Import CSS file" sid="303563890304200" type="Interactive">
+                    <param id="0" name="CSS file">&quot;app-custom.css&quot;</param>
+                </action>
+                <action disabled="1" id="2" name="Import CSS file" sid="524705571358221" type="Interactive">
+                    <param id="0" name="CSS file">&quot;dark-common.css&quot;</param>
+                </action>
+                <action id="19" name="Include Javascript file" sid="480034001775946" type="Interactive">
+                    <param id="0" name="Javascript file">&quot;bootstrap.min.js&quot;</param>
+                </action>
+                <action id="19" name="Include Javascript file" sid="116013407996068" type="Interactive">
+                    <param id="0" name="Javascript file">&quot;material.min.js&quot;</param>
+                </action>
+                <action id="2" name="Import CSS file" sid="435984653796625" type="Interactive">
+                    <param id="0" name="CSS file">&quot;material.min.css&quot;</param>
+                </action>
+                <action id="2" name="Import CSS file" sid="177031780148083" type="Interactive">
+                    <param id="0" name="CSS file">&quot;robotofont.css&quot;</param>
+                </action>
+                <action id="2" name="Import CSS file" sid="159037116519493" type="Interactive">
+                    <param id="0" name="CSS file">&quot;iconsfont.css&quot;</param>
+                </action>
+                <action id="19" name="Include Javascript file" sid="913488198373439" type="Interactive">
+                    <param id="0" name="Javascript file">&quot;popper.min.js&quot;</param>
+                </action>
+                <action id="2" name="Import CSS file" sid="815084919720796" type="Interactive">
+                    <param id="0" name="CSS file">&quot;style.css&quot;</param>
                 </action>
             </actions>
             <sub-events>
