@@ -3,8 +3,9 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Player sheet</name>
     <events>
-        <variable constant="0" name="FrameBuffer" sid="871498872073775" static="0" type="number">0</variable>
-        <variable constant="0" name="Frame" sid="270239002172569" static="0" type="number">0</variable>
+        <variable constant="0" name="InfoReadingStep" sid="691985222733109" static="0" type="number">0</variable>
+        <variable constant="0" name="FrameBuffer" sid="871498872073775" static="0" type="number">1</variable>
+        <variable constant="0" name="Frame" sid="270239002172569" static="0" type="number">1</variable>
         <include>Common sheet</include>
         <event-block sid="964654140858673">
             <conditions>
@@ -25,6 +26,15 @@
                 <action disabled="1" id="-16" name="Wait" sid="851833544853004" type="System">
                     <param id="0" name="Seconds">dt</param>
                 </action>
+                <action id="9" name="Read" sid="386141769596643" type="Electron">
+                    <param id="0" name="Tag">&quot;&quot;</param>
+                    <param id="1" name="Path">CurrentPatch &amp; &quot;/dat.json&quot;</param>
+                    <param id="2" name="Encoding">&quot;utf8&quot;</param>
+                </action>
+                <action id="0" name="Request URL" sid="984589911842597" type="AJAX">
+                    <param id="0" name="Tag">&quot;dat&quot;</param>
+                    <param id="1" name="URL">CurrentPatch &amp; &quot;/dat.json&quot;</param>
+                </action>
             </actions>
             <sub-events>
                 <event-block sid="126824507013162">
@@ -43,6 +53,131 @@
                     </actions>
                 </event-block>
             </sub-events>
+        </event-block>
+        <event-block sid="697035197485641">
+            <conditions>
+                <condition id="0" name="On completed" sid="128841198284464" type="AJAX">
+                    <param id="0" name="Tag">&quot;dat&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="60" name="LoadJSON" sid="685420971992132" type="dat">
+                    <param id="0" name="JSON">AJAX.LastData</param>
+                    <param id="1" name="Reference point">0</param>
+                    <param id="2" name="Key {n}"></param>
+                </action>
+                <action id="-16" name="Wait" sid="477492512342897" type="System">
+                    <param id="0" name="Seconds">dt</param>
+                </action>
+                <action id="14" name="Log" sid="959488230058777" type="Browser">
+                    <param id="0" name="Type">0</param>
+                    <param id="1" name="Message">&quot;Dat URL: &quot; &amp; dat.Value(0,&quot;url&quot;)</param>
+                </action>
+                <action id="14" name="Log" sid="893450882756253" type="Browser">
+                    <param id="0" name="Type">0</param>
+                    <param id="1" name="Message">&quot;Main language: &quot; &amp; dat.Value(0,&quot;lang&quot;)</param>
+                </action>
+                <action id="14" name="Log" sid="135662047963453" type="Browser">
+                    <param id="0" name="Type">0</param>
+                    <param id="1" name="Message">&quot;Video title: &quot; &amp; dat.Value(0,&quot;title&quot;)</param>
+                </action>
+                <action id="14" name="Log" sid="799115714859628" type="Browser">
+                    <param id="0" name="Type">0</param>
+                    <param id="1" name="Message">&quot;Description: &quot; &amp; dat.Value(0,&quot;description&quot;)</param>
+                </action>
+                <action id="14" name="Log" sid="908521873151101" type="Browser">
+                    <param id="0" name="Type">0</param>
+                    <param id="1" name="Message">&quot;Thumbnail: &quot; &amp; dat.Value(0,&quot;thumbnail&quot;)</param>
+                </action>
+                <action id="14" name="Log" sid="100531427415011" type="Browser">
+                    <param id="0" name="Type">0</param>
+                    <param id="1" name="Message">&quot;TODO: tags&quot;</param>
+                </action>
+                <action id="14" name="Log" sid="989298296695837" type="Browser">
+                    <param id="0" name="Type">0</param>
+                    <param id="1" name="Message">&quot;Classification:&quot; &amp; newline &amp; &quot;Region: &quot; &amp; dat.Value(0,&quot;indicativerating&quot;,&quot;region&quot;) &amp; newline &amp; &quot;Type: &quot; &amp; dat.Value(0,&quot;indicativerating&quot;,&quot;type&quot;)</param>
+                </action>
+                <action id="14" name="Log" sid="103092866084870" type="Browser">
+                    <param id="0" name="Type">0</param>
+                    <param id="1" name="Message">&quot;Location: &quot; &amp; dat.Value(0,&quot;thumbnail&quot;) &amp; &quot; (needs to convert from coordinates to a human readable format. there is a cplugin for that)&quot;</param>
+                </action>
+                <action id="14" name="Log" sid="315994215160668" type="Browser">
+                    <param id="0" name="Type">0</param>
+                    <param id="1" name="Message">&quot;Credits: &quot; &amp; dat.Value(0,&quot;credits&quot;,&quot;info&quot;) &amp; &quot; by &quot; &amp; dat.Value(0,&quot;credits&quot;,&quot;author&quot;)</param>
+                </action>
+                <action id="14" name="Log" sid="803236417682405" type="Browser">
+                    <param id="0" name="Type">0</param>
+                    <param id="1" name="Message">&quot;TODO: classification and credits&quot;</param>
+                </action>
+                <action id="14" name="Log" sid="543045781335611" type="Browser">
+                    <param id="0" name="Type">0</param>
+                    <param id="1" name="Message">&quot;----- Done reading dat.json -----&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="759364175935219" type="System">
+                    <param id="0" name="Seconds">dt</param>
+                </action>
+                <action disabled="1" id="-9" name="Set value" sid="793628870655907" type="System">
+                    <param id="0" name="Variable">InfoReadingStep</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="9" name="Read" sid="574578726127393" type="Electron">
+                    <param id="0" name="Tag">&quot;&quot;</param>
+                    <param id="1" name="Path">CurrentPatch &amp; &quot;/info.json&quot;</param>
+                    <param id="2" name="Encoding">&quot;utf8&quot;</param>
+                </action>
+                <action id="0" name="Request URL" sid="181734910456744" type="AJAX">
+                    <param id="0" name="Tag">&quot;info&quot;</param>
+                    <param id="1" name="URL">CurrentPatch &amp; &quot;/info.json&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block disabled="1" sid="291588234026061">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="999933759196252" type="System">
+                    <param id="0" name="Variable">InfoReadingStep</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="700052129899367" type="System" />
+            </conditions>
+            <actions />
+        </event-block>
+        <event-block sid="797945828755046">
+            <conditions>
+                <condition id="0" name="On completed" sid="122798647360555" type="AJAX">
+                    <param id="0" name="Tag">&quot;info&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="60" name="LoadJSON" sid="686967026714118" type="info">
+                    <param id="0" name="JSON">AJAX.LastData</param>
+                    <param id="1" name="Reference point">0</param>
+                    <param id="2" name="Key {n}"></param>
+                </action>
+                <action id="-16" name="Wait" sid="783119439787599" type="System">
+                    <param id="0" name="Seconds">dt</param>
+                </action>
+                <action id="14" name="Log" sid="597643601337162" type="Browser">
+                    <param id="0" name="Type">0</param>
+                    <param id="1" name="Message">&quot;USV version: &quot; &amp; info.Value(0,&quot;version&quot;)</param>
+                </action>
+                <action id="14" name="Log" sid="226526103745830" type="Browser">
+                    <param id="0" name="Type">0</param>
+                    <param id="1" name="Message">&quot;Is paid/premium content: &quot; &amp; info.Value(0,&quot;premium&quot;)</param>
+                </action>
+                <action id="14" name="Log" sid="648197709852385" type="Browser">
+                    <param id="0" name="Type">0</param>
+                    <param id="1" name="Message">&quot;Is fictional: &quot; &amp; info.Value(0,&quot;fiction&quot;)</param>
+                </action>
+                <action id="14" name="Log" sid="685402734864794" type="Browser">
+                    <param id="0" name="Type">0</param>
+                    <param id="1" name="Message">&quot;License: &quot; &amp; info.Value(0,&quot;license&quot;) &amp; &quot; (print details and make accessible link for license)&quot;</param>
+                </action>
+                <action id="14" name="Log" sid="270513401644012" type="Browser">
+                    <param id="0" name="Type">0</param>
+                    <param id="1" name="Message">&quot;----- Done reading info.json -----&quot;</param>
+                </action>
+            </actions>
         </event-block>
         <event-block sid="112200086058272">
             <conditions>
@@ -153,13 +288,22 @@
                 </action>
             </actions>
         </event-block>
-        <event-group description="" sid="383425200527268" title="Buffer">
+        <event-group description="" disabled="1" sid="383425200527268" title="Buffer">
             <sub-events>
-                <event-block sid="869670148929622">
+                <event-block disabled="1" sid="804964953779384">
+                    <conditions />
+                    <actions>
+                        <action id="14" name="Log" sid="169234824876883" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;Counting its frame amount&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block disabled="1" sid="869670148929622">
                     <conditions>
                         <condition id="-14" name="Compare variable" sid="536800601322974" type="System">
                             <param id="0" name="Variable">FrameBuffer</param>
-                            <param id="1" name="Comparison">0</param>
+                            <param id="1" name="Comparison">5</param>
                             <param id="2" name="Value">337</param>
                         </condition>
                     </conditions>
@@ -170,7 +314,7 @@
                         </action>
                     </actions>
                 </event-block>
-                <event-block sid="127672683623643">
+                <event-block disabled="1" sid="127672683623643">
                     <conditions>
                         <condition id="-6" name="Every X seconds" sid="897258693771090" type="System">
                             <param id="0" name="Interval (seconds)">0.2</param>
@@ -178,7 +322,7 @@
                     </conditions>
                     <actions />
                     <sub-events>
-                        <event-block sid="625975944791155">
+                        <event-block disabled="1" sid="625975944791155">
                             <conditions>
                                 <condition id="-12" name="Repeat" sid="844760019027210" type="System">
                                     <param id="0" name="Count">337</param>
@@ -206,13 +350,13 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="222293829224845" title="Frame playing">
+        <event-group description="" disabled="1" sid="222293829224845" title="Frame playing">
             <sub-events>
-                <event-block sid="341254743346070">
+                <event-block disabled="1" sid="341254743346070">
                     <conditions>
                         <condition id="-14" name="Compare variable" sid="897096589286397" type="System">
                             <param id="0" name="Variable">Frame</param>
-                            <param id="1" name="Comparison">0</param>
+                            <param id="1" name="Comparison">5</param>
                             <param id="2" name="Value">337</param>
                         </condition>
                     </conditions>
@@ -223,39 +367,38 @@
                         </action>
                     </actions>
                 </event-block>
-                <event-block sid="424692793845970">
+                <event-block disabled="1" sid="619210282609760">
                     <conditions>
                         <condition id="-6" name="Every X seconds" sid="971662171608792" type="System">
                             <param id="0" name="Interval (seconds)">1</param>
                         </condition>
+                        <condition id="-12" name="Repeat" sid="489323558222809" type="System">
+                            <param id="0" name="Count">11</param>
+                        </condition>
                     </conditions>
+                    <actions>
+                        <action disabled="1" id="10" name="Load image from URL" sid="672544494219091" type="F2">
+                            <param id="0" name="URI">CurrentPatch &amp; &quot;/frames/&quot; &amp; Frame &amp; &quot;.png&quot;</param>
+                            <param id="1" name="Size">0</param>
+                            <param id="2" name="Cross-origin">0</param>
+                        </action>
+                        <action id="10" name="Load image from URL" sid="344243416362498" type="F2">
+                            <param id="0" name="URI">Frame &amp; &quot;.jpg&quot;</param>
+                            <param id="1" name="Size">0</param>
+                            <param id="2" name="Cross-origin">0</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="223046742648946" type="System">
+                            <param id="0" name="Variable">Frame</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action disabled="1" id="-16" name="Wait" sid="596329694460824" type="System">
+                            <param id="0" name="Seconds">0.1833333333333333</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block disabled="1" sid="424692793845970">
+                    <conditions />
                     <actions />
-                    <sub-events>
-                        <event-block sid="619210282609760">
-                            <conditions>
-                                <condition id="-12" name="Repeat" sid="489323558222809" type="System">
-                                    <param id="0" name="Count">11</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="10" name="Load image from URL" sid="672544494219091" type="F2">
-                                    <param id="0" name="URI">CurrentPatch &amp; &quot;/frames/&quot; &amp; Frame &amp; &quot;.png&quot;</param>
-                                    <param id="1" name="Size">0</param>
-                                    <param id="2" name="Cross-origin">0</param>
-                                </action>
-                                <action id="-16" name="Wait" sid="862634429249631" type="System">
-                                    <param id="0" name="Seconds">dt</param>
-                                </action>
-                                <action id="-10" name="Add to" sid="223046742648946" type="System">
-                                    <param id="0" name="Variable">Frame</param>
-                                    <param id="1" name="Value">1</param>
-                                </action>
-                                <action id="-16" name="Wait" sid="596329694460824" type="System">
-                                    <param id="0" name="Seconds">0.1833333333333333</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
                 </event-block>
             </sub-events>
         </event-group>

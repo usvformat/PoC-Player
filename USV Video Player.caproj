@@ -2,7 +2,7 @@
 <c2project>
     <name>USV Video Player</name>
     <description></description>
-    <version>1.0</version>
+    <version>0.1</version>
     <author>Daniell Mesquita</author>
     <author-email></author-email>
     <author-website>http://usv.js.org/</author-website>
@@ -13,6 +13,8 @@
         <plugin author="Scirra" id="AJAX" version="1">AJAX</plugin>
         <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
         <plugin author="Scirra" id="Button" version="1">Button</plugin>
+        <plugin author="PlayLive" id="HTML_iFrame" version="1.419999957">HTML | iFrame</plugin>
+        <plugin author="Yann Granjon" id="JSON" version="1.200000048">JSON</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="NodeWebkit" version="1">NW.js</plugin>
@@ -24,6 +26,7 @@
         <plugin author="Scirra" id="gamepad" version="1">Gamepad</plugin>
         <plugin author="Scirra" id="progressbar" version="1">Progress bar</plugin>
         <plugin author="Scirra" id="sliderbar" version="1">Slider bar</plugin>
+        <plugin author="Scirra" id="video" version="1">Video</plugin>
     </used-plugins>
     <used-behaviors />
     <used-effects />
@@ -38,8 +41,8 @@
     <preview-effects>1</preview-effects>
     <use-loader-layout>0</use-loader-layout>
     <configuration-settings>
-        <prop name="Clear background">Yes</prop>
-        <prop name="Downscaling">Medium quality</prop>
+        <prop name="Clear background">No</prop>
+        <prop name="Downscaling">Low quality</prop>
         <prop name="Enable WebGL">On</prop>
         <prop name="Fullscreen in browser">Letterbox scale</prop>
         <prop name="Fullscreen scaling">High quality</prop>
@@ -47,12 +50,20 @@
         <prop name="Orientations">Any</prop>
         <prop name="Pause on unfocus">No</prop>
         <prop name="Physics engine">Box2D asm.js</prop>
-        <prop name="Preload sounds">Yes</prop>
+        <prop name="Preload sounds">No</prop>
         <prop name="Preview browser">Custom</prop>
         <prop name="Sampling">Linear</prop>
         <prop name="Use high-DPI display">Yes</prop>
     </configuration-settings>
     <object-folder>
+        <object-folder name="JSON">
+            <object-type global="1" name="dat" sid="499216655462288">
+                <plugin id="JSON" />
+            </object-type>
+            <object-type global="1" name="info" sid="332938583448376">
+                <plugin id="JSON" />
+            </object-type>
+        </object-folder>
         <object-type name="NWjs" sid="465594131504903">
             <plugin id="NodeWebkit" />
         </object-type>
@@ -229,6 +240,12 @@
         </object-type>
         <object-type name="Electron" sid="696351815803294">
             <plugin id="armaldio_electron" />
+        </object-type>
+        <object-type name="Video" sid="746718903561378">
+            <plugin id="video" />
+        </object-type>
+        <object-type name="Interactive" sid="130947570813347">
+            <plugin id="HTML_iFrame" />
         </object-type>
     </object-folder>
     <families />
