@@ -1,6 +1,9 @@
-info button (description, location, paid, fictional, license, usv version)
+info button (paid, fictional, license, usv version)
 
 tab: about player
+
+location
+tags
 
 language flag
 classification
