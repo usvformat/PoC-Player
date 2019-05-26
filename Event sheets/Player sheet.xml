@@ -275,7 +275,7 @@
                 </action>
                 <action id="-9" name="Set value" sid="205432451584842" type="System">
                     <param id="0" name="Variable">Temp</param>
-                    <param id="1" name="Value">&quot;&lt;a target=blank href=&quot; &amp; dat.Value(0,&quot;url&quot;) &amp; &quot; title=Open in Dat&gt;&lt;button&gt;&lt;/button&gt;&lt;/a&gt;&quot;</param>
+                    <param id="1" name="Value">&quot;&lt;a target=blank href=&quot; &amp; dat.Value(0,&quot;url&quot;) &amp; &quot; title=Open in Dat&gt;&lt;i class=material-icons&gt;open_in_new&lt;/i&gt;&lt;/a&gt;&quot;</param>
                 </action>
                 <action id="-16" name="Wait" sid="221047539611996" type="System">
                     <param id="0" name="Seconds">dt</param>

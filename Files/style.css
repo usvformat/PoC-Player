@@ -22,9 +22,7 @@ vheader {
     text-shadow: 2px 2px 4px #000000;
 }
 
-#vurl a button {
-    background: url(Ei-external-link.svg);
-    width: 32px;
-    height: 32px;
-    border: none;
+#vurl a {
+    color: #fff!important;
+    text-shadow: 2px 2px 4px #000000;
 }
