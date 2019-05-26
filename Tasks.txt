@@ -1,5 +1,3 @@
-load json infos to c values
-
 read languages.json or use it in dat.json
 
 ext link button for dat
