@@ -9,6 +9,11 @@
                 <condition id="-2" name="On start of layout" sid="147780016108864" type="System" />
             </conditions>
             <actions>
+                <action id="29" name="Set Size" sid="161407354550194" type="Electron">
+                    <param id="0" name="Width">854</param>
+                    <param id="1" name="Height">480</param>
+                    <param id="2" name="Animated">0</param>
+                </action>
                 <action id="-15" name="Set visible" sid="214991536541523" type="Particles2">
                     <param id="0" name="Visibility">0</param>
                 </action>

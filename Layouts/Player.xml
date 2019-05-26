@@ -104,8 +104,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>817</x>
-                        <y>444</y>
+                        <x>619</x>
+                        <y>456</y>
                         <z>0</z>
                         <width>47</width>
                         <height>47</height>
@@ -114,51 +114,6 @@
                         <hotspotY>0.518518507</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="ProgressBar" uid="17">
-                    <properties>
-                        <value>0</value>
-                        <maximum>100</maximum>
-                        <tooltip></tooltip>
-                        <initial-visibility>Visible</initial-visibility>
-                        <id-optional></id-optional>
-                    </properties>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>13</x>
-                        <y>403</y>
-                        <z>0</z>
-                        <width>827</width>
-                        <height>8</height>
-                        <depth>0</depth>
-                        <hotspotX>0</hotspotX>
-                        <hotspotY>0</hotspotY>
-                    </world>
-                </instance>
-                <instance type="SliderBar" uid="18">
-                    <properties>
-                        <value>0</value>
-                        <minimum>0</minimum>
-                        <maximum>100</maximum>
-                        <step>0</step>
-                        <tooltip></tooltip>
-                        <initial-visibility>Visible</initial-visibility>
-                        <enabled>Yes</enabled>
-                        <id-optional></id-optional>
-                    </properties>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>13</x>
-                        <y>403</y>
-                        <z>0</z>
-                        <width>827</width>
-                        <height>8</height>
-                        <depth>0</depth>
-                        <hotspotX>0</hotspotX>
-                        <hotspotY>0</hotspotY>
                     </world>
                 </instance>
                 <instance type="Button" uid="19">
@@ -243,13 +198,13 @@
                         <initial-visibility>Visible</initial-visibility>
                         <tooltip></tooltip>
                         <background>transparent</background>
-                        <border></border>
+                        <border>none</border>
                         <scroll>Auto</scroll>
                         <object>HTML</object>
                         <iframe></iframe>
                         <url></url>
                         <html></html>
-                        <code>&lt;div id=&quot;vthumbnail&quot;&gt;&lt;/div&gt;&lt;vheader&gt;&lt;!--&lt;span id=&quot;avatar&quot;&gt;&lt;/span&gt;--&gt;&lt;span id=&quot;vtitle&quot;&gt;&lt;/span&gt;&lt;span id=&quot;vurl&quot;&gt;&lt;/span&gt;&lt;span id=&quot;vflag&quot;&gt;&lt;/span&gt;&lt;span id=&quot;vclassification&quot;&gt;&lt;/span&gt;&lt;/vheader&gt;</code>
+                        <code>&lt;div id=&quot;vthumbnail&quot;&gt;&lt;/div&gt;&lt;vplaceholder&gt;&lt;vheader&gt;&lt;!--&lt;span id=&quot;avatar&quot;&gt;&lt;/span&gt;--&gt;&lt;span id=&quot;vtitle&quot;&gt;&lt;/span&gt;&lt;span id=&quot;vurl&quot;&gt;&lt;/span&gt;&lt;div id=&quot;vinfo&quot; onclick=C2(&apos;videoinfo&apos;);&gt;&lt;i class=&quot;material-icons&quot;&gt;info&lt;/i&gt;&lt;/div&gt;&lt;span id=&quot;vflag&quot;&gt;&lt;/span&gt;&lt;span </code>
                         <color></color>
                         <text-selectable>Yes</text-selectable>
                         <auto-font-size>Default</auto-font-size>
@@ -261,7 +216,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>1</x>
-                        <y>1</y>
+                        <y>0</y>
                         <z>0</z>
                         <width>640</width>
                         <height>360</height>
@@ -269,6 +224,51 @@
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
                         <angle>0</angle>
+                    </world>
+                </instance>
+                <instance type="ProgressBar" uid="17">
+                    <properties>
+                        <value>0</value>
+                        <maximum>100</maximum>
+                        <tooltip></tooltip>
+                        <initial-visibility>Visible</initial-visibility>
+                        <id-optional></id-optional>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>13</x>
+                        <y>403</y>
+                        <z>0</z>
+                        <width>640</width>
+                        <height>8</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                    </world>
+                </instance>
+                <instance type="SliderBar" uid="18">
+                    <properties>
+                        <value>0</value>
+                        <minimum>0</minimum>
+                        <maximum>100</maximum>
+                        <step>0</step>
+                        <tooltip></tooltip>
+                        <initial-visibility>Visible</initial-visibility>
+                        <enabled>Yes</enabled>
+                        <id-optional></id-optional>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>13</x>
+                        <y>403</y>
+                        <z>0</z>
+                        <width>640</width>
+                        <height>8</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
                     </world>
                 </instance>
             </instances>

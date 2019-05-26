@@ -1,5 +1,3 @@
-info button (paid, fictional, license, usv version)
-
 tab: about player
 
 location
@@ -13,4 +11,6 @@ read languages.json or use it in dat.json
 
 author type (optional), url and photo
 
-<div id="vthumbnail"></div><vheader><!--<span id="avatar"></span>--><span id="vtitle"></span><span id="vurl"></span><div id="vinfo" onclick=C2('videoinfo');><i class="material-icons">info</i></div><span id="vflag"></span><span id="vclassification"></span></vheader>
+show message for fictional
+
+<div id="vthumbnail"></div><vplaceholder><vheader><!--<span id="avatar"></span>--><span id="vtitle"></span><span id="vurl"></span><div id="vinfo" onclick=C2('videoinfo');><i class="material-icons">info</i></div><span id="vflag"></span><span id="vclassification"></span></vheader></vplaceholder>
