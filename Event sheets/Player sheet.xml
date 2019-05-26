@@ -103,7 +103,7 @@
                 </action>
                 <action id="14" name="Log" sid="315994215160668" type="Browser">
                     <param id="0" name="Type">0</param>
-                    <param id="1" name="Message">&quot;Credits: &quot; &amp; dat.Value(0,&quot;credits&quot;,&quot;info&quot;) &amp; &quot; by &quot; &amp; dat.Value(0,&quot;credits&quot;,&quot;author&quot;)</param>
+                    <param id="1" name="Message">&quot;Credits: &quot; &amp; dat.Value(0,&quot;credits&quot;,&quot;info&quot;) &amp; &quot; by &quot; &amp; dat.Value(0,&quot;credits&quot;,&quot;author&quot;) &amp; &quot; (TODO: multiple authors)&quot;</param>
                 </action>
                 <action id="14" name="Log" sid="803236417682405" type="Browser">
                     <param id="0" name="Type">0</param>
