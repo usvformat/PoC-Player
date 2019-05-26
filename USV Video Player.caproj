@@ -34,8 +34,8 @@
         <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
     </configurations>
     <window-size>
-        <width>854</width>
-        <height>480</height>
+        <width>640</width>
+        <height>360</height>
     </window-size>
     <pixel-rounding>0</pixel-rounding>
     <preview-effects>1</preview-effects>
@@ -288,5 +288,6 @@
             <file name="loading-logo.png" />
         </file-folder>
         <file name="style.css" />
+        <file name="Ei-external-link.svg" />
     </files-folder>
 </c2project>

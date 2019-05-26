@@ -9,3 +9,21 @@
     height: 100%;
     object-fit: cover;
 }
+
+vheader {
+    position: fixed;
+    top: 0;
+    left: 15px;
+    font-size: 25px;
+}
+
+#vtitle {
+    text-shadow: 2px 2px 4px #000000;
+}
+
+#vurl a button {
+    background: url(Ei-external-link.svg);
+    width: 32px;
+    height: 32px;
+    border: none;
+}

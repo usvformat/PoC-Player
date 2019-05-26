@@ -1,11 +1,10 @@
-ext link button for dat
 language flag
-title
 classification
-thumbnail
 play placeholder
 info button (description, location, paid, fictional, license)
 
 read languages.json or use it in dat.json
 
 author type (optional), url and photo
+
+<div id="vthumbnail"></div><vheader><!--<span id="avatar"></span>--><span id="vtitle"></span><span id="vurl"></span><span id="vflag"></span><span id="vclassification"></span></vheader>

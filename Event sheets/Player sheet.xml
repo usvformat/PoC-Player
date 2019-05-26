@@ -40,6 +40,11 @@
                     <param id="0" name="Tag">&quot;dat&quot;</param>
                     <param id="1" name="URL">CurrentPatch &amp; &quot;/dat.json&quot;</param>
                 </action>
+                <action disabled="1" id="29" name="Set Size" sid="614362816021677" type="Electron">
+                    <param id="0" name="Width">640</param>
+                    <param id="1" name="Height">360</param>
+                    <param id="2" name="Animated">0</param>
+                </action>
             </actions>
             <sub-events>
                 <event-block sid="126824507013162">
@@ -234,7 +239,7 @@
                 </action>
                 <action id="-9" name="Set value" sid="205432451584842" type="System">
                     <param id="0" name="Variable">Temp</param>
-                    <param id="1" name="Value">&quot;&lt;a target=blank href=&quot; &amp; dat.Value(0,&quot;url&quot;) &amp; &quot; title=Dat&gt;&quot;</param>
+                    <param id="1" name="Value">&quot;&lt;a target=blank href=&quot; &amp; dat.Value(0,&quot;url&quot;) &amp; &quot; title=Open in Dat&gt;&lt;button&gt;&lt;/button&gt;&lt;/a&gt;&quot;</param>
                 </action>
                 <action id="-16" name="Wait" sid="221047539611996" type="System">
                     <param id="0" name="Seconds">dt</param>

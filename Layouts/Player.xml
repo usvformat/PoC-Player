@@ -4,8 +4,8 @@
     <sid>491780221392258</sid>
     <event-sheet>Player sheet</event-sheet>
     <size>
-        <width>854</width>
-        <height>480</height>
+        <width>640</width>
+        <height>360</height>
     </size>
     <margins>
         <horizontal>500</horizontal>
@@ -57,8 +57,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>426.5</x>
-                        <y>241</y>
+                        <x>480</x>
+                        <y>-251</y>
                         <z>0</z>
                         <width>853</width>
                         <height>480</height>
@@ -79,8 +79,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>426.5</x>
-                        <y>241</y>
+                        <x>533</x>
+                        <y>-266</y>
                         <z>0</z>
                         <width>853</width>
                         <height>480</height>
@@ -228,8 +228,8 @@
                         <x>0</x>
                         <y>0</y>
                         <z>0</z>
-                        <width>854</width>
-                        <height>402</height>
+                        <width>640</width>
+                        <height>360</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
@@ -263,8 +263,8 @@
                         <x>1</x>
                         <y>1</y>
                         <z>0</z>
-                        <width>852</width>
-                        <height>402</height>
+                        <width>640</width>
+                        <height>360</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
