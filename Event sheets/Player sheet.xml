@@ -6,12 +6,17 @@
         <variable constant="0" name="InfoReadingStep" sid="691985222733109" static="0" type="number">0</variable>
         <variable constant="0" name="FrameBuffer" sid="871498872073775" static="0" type="number">1</variable>
         <variable constant="0" name="Frame" sid="270239002172569" static="0" type="number">1</variable>
+        <variable constant="0" name="InteractHTML" sid="363632824609562" static="0" type="number">1</variable>
+        <variable constant="0" name="Temp" sid="804928036041102" static="0" type="text"></variable>
         <include>Common sheet</include>
         <event-block sid="964654140858673">
             <conditions>
                 <condition id="-2" name="On start of layout" sid="611817032465434" type="System" />
             </conditions>
             <actions>
+                <action id="2" name="Import CSS file" sid="162669350857337" type="Interactive">
+                    <param id="0" name="CSS file">&quot;style.css&quot;</param>
+                </action>
                 <action id="2" name="Set CSS style" sid="242924927805249" type="SliderBar">
                     <param id="0" name="Property name">&quot;-webkit-appearance&quot;</param>
                     <param id="1" name="Value">&quot;none&quot;</param>
@@ -89,6 +94,15 @@
                     <param id="0" name="Type">0</param>
                     <param id="1" name="Message">&quot;Thumbnail: &quot; &amp; dat.Value(0,&quot;thumbnail&quot;)</param>
                 </action>
+                <action id="9" name="Read" sid="760504503335551" type="Electron">
+                    <param id="0" name="Tag">&quot;&quot;</param>
+                    <param id="1" name="Path">CurrentPatch &amp; &quot;/&quot; &amp; dat.Value(0,&quot;thumbnail&quot;)</param>
+                    <param id="2" name="Encoding">&quot;utf8&quot;</param>
+                </action>
+                <action id="0" name="Request URL" sid="722483607788489" type="AJAX">
+                    <param id="0" name="Tag">&quot;thumbnail&quot;</param>
+                    <param id="1" name="URL">CurrentPatch &amp; &quot;/&quot; &amp; dat.Value(0,&quot;thumbnail&quot;)</param>
+                </action>
                 <action id="14" name="Log" sid="100531427415011" type="Browser">
                     <param id="0" name="Type">0</param>
                     <param id="1" name="Message">&quot;TODO: tags&quot;</param>
@@ -99,7 +113,7 @@
                 </action>
                 <action id="14" name="Log" sid="103092866084870" type="Browser">
                     <param id="0" name="Type">0</param>
-                    <param id="1" name="Message">&quot;Location: &quot; &amp; dat.Value(0,&quot;thumbnail&quot;) &amp; &quot; (needs to convert from coordinates to a human readable format. there is a cplugin for that)&quot;</param>
+                    <param id="1" name="Message">&quot;Location: &quot; &amp; dat.Value(0,&quot;location&quot;) &amp; &quot; (needs to convert from coordinates to a human readable format. there is a cplugin for that)&quot;</param>
                 </action>
                 <action id="14" name="Log" sid="315994215160668" type="Browser">
                     <param id="0" name="Type">0</param>
@@ -176,6 +190,66 @@
                 <action id="14" name="Log" sid="270513401644012" type="Browser">
                     <param id="0" name="Type">0</param>
                     <param id="1" name="Message">&quot;----- Done reading info.json -----&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="877561773622783" type="System">
+                    <param id="0" name="Seconds">dt</param>
+                </action>
+                <action id="-9" name="Set value" sid="781256112953140" type="System">
+                    <param id="0" name="Variable">InfoReadingStep</param>
+                    <param id="1" name="Value">2</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="156516851514509">
+            <conditions>
+                <condition id="0" name="On completed" sid="542678225377253" type="AJAX">
+                    <param id="0" name="Tag">&quot;thumbnail&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="24" name="Get elements" sid="130424166908399" type="Interactive">
+                    <param id="0" name="ID/Class">&quot;#vthumbnail&quot;</param>
+                    <param id="1" name="Set">AJAX.LastData</param>
+                    <param id="2" name="Append">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="521429385571086">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="608841830088562" type="System">
+                    <param id="0" name="Variable">InfoReadingStep</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">2</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="457660210268160" type="System" />
+            </conditions>
+            <actions>
+                <action disabled="1" id="7" name="Append HTML" sid="404451272667573" type="Interactive">
+                    <param id="0" name="Append HTML">&quot;&lt;img width=100% height=100% src=&quot; &amp; CurrentPatch &amp; &quot;/&quot; &amp; dat.Value(0,&quot;thumbnail&quot;) &amp; &quot;&gt;&quot;</param>
+                </action>
+                <action id="24" name="Get elements" sid="199006044874041" type="Interactive">
+                    <param id="0" name="ID/Class">&quot;#vtitle&quot;</param>
+                    <param id="1" name="Set">dat.Value(0,&quot;title&quot;)</param>
+                    <param id="2" name="Append">&quot;&quot;</param>
+                </action>
+                <action id="-9" name="Set value" sid="205432451584842" type="System">
+                    <param id="0" name="Variable">Temp</param>
+                    <param id="1" name="Value">&quot;&lt;a target=blank href=&quot; &amp; dat.Value(0,&quot;url&quot;) &amp; &quot; title=Dat&gt;&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="221047539611996" type="System">
+                    <param id="0" name="Seconds">dt</param>
+                </action>
+                <action id="24" name="Get elements" sid="601844876550324" type="Interactive">
+                    <param id="0" name="ID/Class">&quot;#vurl&quot;</param>
+                    <param id="1" name="Set">Temp</param>
+                    <param id="2" name="Append">&quot;&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="304364420275759" type="System">
+                    <param id="0" name="Seconds">dt</param>
+                </action>
+                <action id="-9" name="Set value" sid="784921026138891" type="System">
+                    <param id="0" name="Variable">Temp</param>
+                    <param id="1" name="Value">&quot;&quot;</param>
                 </action>
             </actions>
         </event-block>
@@ -402,5 +476,37 @@
                 </event-block>
             </sub-events>
         </event-group>
+        <event-block sid="719300980909626">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="738785715139672" type="System">
+                    <param id="0" name="Variable">InteractHTML</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="504207148599399" type="System" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Set position" sid="816796430284423" type="Interactive">
+                    <param id="0" name="X">594</param>
+                    <param id="1" name="Y">-415</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="885044661017486">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="622683711160773" type="System">
+                    <param id="0" name="Variable">InteractHTML</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="697857095168950" type="System" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Set position" sid="971547833545570" type="Interactive">
+                    <param id="0" name="X">1</param>
+                    <param id="1" name="Y">0</param>
+                </action>
+            </actions>
+        </event-block>
     </events>
 </c2eventsheet>

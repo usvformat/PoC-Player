@@ -1,0 +1,11 @@
+#vthumbnail {
+    width: 100%!important;
+    height: 100%!important;
+    overflow: hidden;
+}
+
+#vthumbnail svg {
+    width: 100%!important;
+    height: 100%;
+    object-fit: cover;
+}

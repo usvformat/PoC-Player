@@ -242,14 +242,14 @@
                         <class-optional></class-optional>
                         <initial-visibility>Visible</initial-visibility>
                         <tooltip></tooltip>
-                        <background></background>
+                        <background>transparent</background>
                         <border></border>
                         <scroll>Auto</scroll>
-                        <object>iFrame</object>
+                        <object>HTML</object>
                         <iframe></iframe>
                         <url></url>
                         <html></html>
-                        <code></code>
+                        <code>&lt;div id=&quot;vthumbnail&quot;&gt;&lt;/div&gt;&lt;vheader&gt;&lt;!--&lt;span id=&quot;avatar&quot;&gt;&lt;/span&gt;--&gt;&lt;span id=&quot;vtitle&quot;&gt;&lt;/span&gt;&lt;span id=&quot;vurl&quot;&gt;&lt;/span&gt;&lt;span id=&quot;vflag&quot;&gt;&lt;/span&gt;&lt;span id=&quot;vclassification&quot;&gt;&lt;/span&gt;&lt;/vheader&gt;</code>
                         <color></color>
                         <text-selectable>Yes</text-selectable>
                         <auto-font-size>Default</auto-font-size>
@@ -260,10 +260,10 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>553</x>
-                        <y>-78</y>
+                        <x>1</x>
+                        <y>1</y>
                         <z>0</z>
-                        <width>854</width>
+                        <width>852</width>
                         <height>402</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>

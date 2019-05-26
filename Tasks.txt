@@ -1,5 +1,3 @@
-read languages.json or use it in dat.json
-
 ext link button for dat
 language flag
 title
@@ -7,5 +5,7 @@ classification
 thumbnail
 play placeholder
 info button (description, location, paid, fictional, license)
+
+read languages.json or use it in dat.json
 
 author type (optional), url and photo

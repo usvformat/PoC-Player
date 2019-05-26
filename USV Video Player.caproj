@@ -287,5 +287,6 @@
             <file name="icon-32.png" />
             <file name="loading-logo.png" />
         </file-folder>
+        <file name="style.css" />
     </files-folder>
 </c2project>
