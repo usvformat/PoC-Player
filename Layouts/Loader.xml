@@ -109,7 +109,7 @@
                 </instance>
                 <instance type="Text" uid="2">
                     <properties>
-                        <text>Select a folder containing USV video(s):</text>
+                        <text>Select a USV folder:</text>
                         <initial-visibility>Visible</initial-visibility>
                         <font>Arial,-16</font>
                         <color>0,0,0</color>

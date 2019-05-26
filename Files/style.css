@@ -29,7 +29,7 @@ vheader {
     font-size: 25px;
     color: #fff;
     text-shadow: 2px 2px 4px #000000;
-    cursor: normal;
+    cursor: normal!important;
 }
 
 #vurl a {

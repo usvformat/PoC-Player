@@ -85,15 +85,6 @@
                 <action id="2" name="Import CSS file" sid="815084919720796" type="Interactive">
                     <param id="0" name="CSS file">&quot;style.css&quot;</param>
                 </action>
-                <action id="9" name="Read" sid="576972957228487" type="Electron">
-                    <param id="0" name="Tag">&quot;&quot;</param>
-                    <param id="1" name="Path">Electron.GetAppPath &amp; &quot;/USV Player/rsc/dialogs/info.html&quot;</param>
-                    <param id="2" name="Encoding">&quot;utf8&quot;</param>
-                </action>
-                <action id="0" name="Request URL" sid="484164398194164" type="AJAX">
-                    <param id="0" name="Tag">&quot;infovdialog&quot;</param>
-                    <param id="1" name="URL">Electron.GetAppPath &amp; &quot;/USV Player/rsc/dialogs/info.html&quot;</param>
-                </action>
             </actions>
             <sub-events>
                 <event-block sid="126824507013162">
@@ -243,7 +234,7 @@
                 </action>
                 <action id="14" name="Log" sid="910150947068937" type="Browser">
                     <param id="0" name="Type">0</param>
-                    <param id="1" name="Message">&quot;USV version: &quot; &amp; info.Value(0,&quot;version&quot;)</param>
+                    <param id="1" name="Message">&quot;Video version: &quot; &amp; info.Value(0,&quot;version&quot;)</param>
                 </action>
                 <action id="14" name="Log" sid="270513401644012" type="Browser">
                     <param id="0" name="Type">0</param>
@@ -309,6 +300,15 @@
                     <param id="0" name="Variable">Temp</param>
                     <param id="1" name="Value">&quot;l&quot;</param>
                 </action>
+                <action id="9" name="Read" sid="876077932959372" type="Electron">
+                    <param id="0" name="Tag">&quot;&quot;</param>
+                    <param id="1" name="Path">Electron.GetAppPath &amp; &quot;/USV Player/rsc/dialogs/info.html&quot;</param>
+                    <param id="2" name="Encoding">&quot;utf8&quot;</param>
+                </action>
+                <action id="0" name="Request URL" sid="589121555940647" type="AJAX">
+                    <param id="0" name="Tag">&quot;infovdialog&quot;</param>
+                    <param id="1" name="URL">Electron.GetAppPath &amp; &quot;/USV Player/rsc/dialogs/info.html&quot;</param>
+                </action>
             </actions>
         </event-block>
         <event-block sid="973168136761405">
@@ -341,25 +341,6 @@
                     <param id="1" name="Set">&quot;&lt;b&gt;Thumbnail&lt;/b&gt;: &quot; &amp; dat.Value(0,&quot;thumbnail&quot;)</param>
                     <param id="2" name="Append">&quot;&quot;</param>
                 </action>
-                <action id="-9" name="Set value" sid="584154661529266" type="System">
-                    <param id="0" name="Variable">Temp</param>
-                    <param id="1" name="Value">&quot;&lt;a target=blank href=&quot; &amp; dat.Value(0,&quot;url&quot;) &amp; &quot; title=Open in Dat&gt;&quot; &amp; dat.Value(0,&quot;url&quot;) &amp; &quot;&lt;/a&gt;&quot;</param>
-                </action>
-                <action id="-16" name="Wait" sid="979468933631727" type="System">
-                    <param id="0" name="Seconds">dt</param>
-                </action>
-                <action id="24" name="Get elements" sid="907089169188793" type="Interactive">
-                    <param id="0" name="ID/Class">&quot;#dialurl&quot;</param>
-                    <param id="1" name="Set">&quot;&lt;b&gt;Dat URL&lt;/b&gt;: &quot; &amp; Temp</param>
-                    <param id="2" name="Append">&quot;&quot;</param>
-                </action>
-                <action id="-16" name="Wait" sid="425853144689474" type="System">
-                    <param id="0" name="Seconds">dt</param>
-                </action>
-                <action id="-9" name="Set value" sid="327630267940286" type="System">
-                    <param id="0" name="Variable">Temp</param>
-                    <param id="1" name="Value">&quot;&quot;</param>
-                </action>
                 <action id="24" name="Get elements" sid="611927054879607" type="Interactive">
                     <param id="0" name="ID/Class">&quot;#dialmainlang&quot;</param>
                     <param id="1" name="Set">&quot;&lt;b&gt;Main language&lt;/b&gt;: &quot; &amp; dat.Value(0,&quot;lang&quot;)</param>
@@ -386,37 +367,57 @@
                     <param id="2" name="Append">&quot;&quot;</param>
                 </action>
             </actions>
-        </event-block>
-        <event-block sid="132852246104356">
-            <conditions>
-                <condition id="-14" name="Compare variable" sid="961385894272168" type="System">
-                    <param id="0" name="Variable">Temp</param>
-                    <param id="1" name="Comparison">0</param>
-                    <param id="2" name="Value">&quot;l&quot;</param>
-                </condition>
-                <condition id="-4" name="Trigger once while true" sid="265262512568638" type="System" />
-            </conditions>
-            <actions>
-                <action id="-9" name="Set value" sid="653755987587949" type="System">
-                    <param id="0" name="Variable">Temp</param>
-                    <param id="1" name="Value">&quot;&lt;a target=blank href=&quot; &amp; info.Value(0,&quot;license&quot;) &amp; &quot; title=Open in browser&gt;&quot; &amp; info.Value(0,&quot;license&quot;) &amp; &quot;&lt;/a&gt;&quot;</param>
-                </action>
-                <action id="-16" name="Wait" sid="374914875232432" type="System">
-                    <param id="0" name="Seconds">dt</param>
-                </action>
-                <action id="24" name="Get elements" sid="350502509220466" type="Interactive">
-                    <param id="0" name="ID/Class">&quot;#dialicense&quot;</param>
-                    <param id="1" name="Set">&quot;&lt;b&gt;License&lt;/b&gt;: &quot; &amp; Temp</param>
-                    <param id="2" name="Append">&quot;&quot;</param>
-                </action>
-                <action id="-16" name="Wait" sid="678974927064269" type="System">
-                    <param id="0" name="Seconds">dt</param>
-                </action>
-                <action id="-9" name="Set value" sid="473318990630276" type="System">
-                    <param id="0" name="Variable">Temp</param>
-                    <param id="1" name="Value">&quot;&quot;</param>
-                </action>
-            </actions>
+            <sub-events>
+                <event-block sid="854988048706955">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="973736484777913" type="System">
+                            <param id="0" name="Variable">Temp</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;l&quot;</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="806137521633980" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Wait" sid="305872203078694" type="System">
+                            <param id="0" name="Seconds">dt</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="229477181524785" type="System">
+                            <param id="0" name="Variable">Temp</param>
+                            <param id="1" name="Value">&quot;&lt;a target=blank href=&quot; &amp; dat.Value(0,&quot;url&quot;) &amp; &quot; title=Open in Dat&gt;&quot; &amp; dat.Value(0,&quot;url&quot;) &amp; &quot;&lt;/a&gt;&quot;</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="656632784018444" type="System">
+                            <param id="0" name="Seconds">dt</param>
+                        </action>
+                        <action id="24" name="Get elements" sid="367778826414568" type="Interactive">
+                            <param id="0" name="ID/Class">&quot;#dialurl&quot;</param>
+                            <param id="1" name="Set">&quot;&lt;b&gt;Dat URL&lt;/b&gt;: &quot; &amp; Temp</param>
+                            <param id="2" name="Append">&quot;&quot;</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="355301209535501" type="System">
+                            <param id="0" name="Seconds">dt</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="462798390886972" type="System">
+                            <param id="0" name="Variable">Temp</param>
+                            <param id="1" name="Value">&quot;&lt;a target=blank href=&quot; &amp; info.Value(0,&quot;license&quot;) &amp; &quot; title=Open in browser&gt;&quot; &amp; info.Value(0,&quot;license&quot;) &amp; &quot;&lt;/a&gt;&quot;</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="378728153176738" type="System">
+                            <param id="0" name="Seconds">dt</param>
+                        </action>
+                        <action id="24" name="Get elements" sid="439134490679946" type="Interactive">
+                            <param id="0" name="ID/Class">&quot;#dialicense&quot;</param>
+                            <param id="1" name="Set">&quot;&lt;b&gt;License&lt;/b&gt;: &quot; &amp; Temp</param>
+                            <param id="2" name="Append">&quot;&quot;</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="976918524867915" type="System">
+                            <param id="0" name="Seconds">dt</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="937225221222667" type="System">
+                            <param id="0" name="Variable">Temp</param>
+                            <param id="1" name="Value">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
         <event-block sid="683965671117110">
             <conditions>

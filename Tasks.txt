@@ -1,5 +1,3 @@
-tab: about player
-
 location
 tags
 
@@ -12,5 +10,8 @@ read languages.json or use it in dat.json
 author type (optional), url and photo
 
 show message for fictional
+
+player libs
+player license
 
 <div id="vthumbnail"></div><vplaceholder><vheader><!--<span id="avatar"></span>--><span id="vtitle"></span><span id="vurl"></span><div id="vinfo" onclick=C2('videoinfo');><i class="material-icons">info</i></div><span id="vflag"></span><span id="vclassification"></span></vheader></vplaceholder>
