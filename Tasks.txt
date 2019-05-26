@@ -1,4 +1,7 @@
-info button (description, location, paid, fictional, license)
+info button (description, location, paid, fictional, license, usv version)
+
+tab: about player
+
 language flag
 classification
 play placeholder
@@ -7,4 +10,4 @@ read languages.json or use it in dat.json
 
 author type (optional), url and photo
 
-<div id="vthumbnail"></div><vheader><!--<span id="avatar"></span>--><span id="vtitle"></span><span id="vurl"></span><span id="vflag"></span><span id="vclassification"></span></vheader>
+<div id="vthumbnail"></div><vheader><!--<span id="avatar"></span>--><span id="vtitle"></span><span id="vurl"></span><div id="vinfo" onclick=C2('videoinfo');><i class="material-icons">info</i></div><span id="vflag"></span><span id="vclassification"></span></vheader>
