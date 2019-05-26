@@ -1,7 +1,7 @@
+info button (description, location, paid, fictional, license)
 language flag
 classification
 play placeholder
-info button (description, location, paid, fictional, license)
 
 read languages.json or use it in dat.json
 
