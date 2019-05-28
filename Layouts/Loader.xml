@@ -230,6 +230,8 @@
             <effects />
         </layer>
     </layers>
-    <nonworld-instances />
+    <nonworld-instances>
+        <instance type="conf" uid="22" />
+    </nonworld-instances>
     <effects />
 </c2layout>

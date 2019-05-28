@@ -60,6 +60,9 @@
             <object-type global="1" name="dat" sid="499216655462288">
                 <plugin id="JSON" />
             </object-type>
+            <object-type global="1" name="conf" sid="191094840158186">
+                <plugin id="JSON" />
+            </object-type>
         </object-folder>
         <object-type name="NWjs" sid="465594131504903">
             <plugin id="NodeWebkit" />

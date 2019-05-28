@@ -1,12 +1,12 @@
 language flag
-classification (parental rating)
 different dat.json info according to language
+classification (parental rating)
 
 author type (optional), url and photo
 array on authorship type (footage, producer, music)
+directors, producers, writers, publisher, content provider, media created, encoded
 genre (music)? category?
-year, contributing artists
-directors, producers, writers, publisher, content provider, media created, encoded by, promotion url, copyright
+year, contributing artists by, promotion url, copyright
 lenght
 qualities
 mood
@@ -21,3 +21,9 @@ tags
 play placeholder
 
 <div id="vthumbnail"></div><vplaceholder><vheader><!--<span id="avatar"></span>--><span id="vtitle"></span><span id="vurl"></span><div id="vinfo" onclick=C2('videoinfo'); title="Info/about (this video, USV player)"><i class="material-icons">info</i></div><span id="vflag"></span><span id="vclassification"></span></vheader></vplaceholder>
+
+read conf.json languages and apply
+add vendlogo
+loading spinner (video infos, video itself)
+embed (like on scirr arc, and load c2 libs from FMWK CDN)
+read parameters from embed tag

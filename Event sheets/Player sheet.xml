@@ -27,6 +27,15 @@
                 <action disabled="1" id="-16" name="Wait" sid="851833544853004" type="System">
                     <param id="0" name="Seconds">dt</param>
                 </action>
+                <action id="9" name="Read" sid="493183885767560" type="Electron">
+                    <param id="0" name="Tag">&quot;&quot;</param>
+                    <param id="1" name="Path">Electron.GetAppPath &amp; &quot;/USV Player/conf.json&quot;</param>
+                    <param id="2" name="Encoding">&quot;utf8&quot;</param>
+                </action>
+                <action id="0" name="Request URL" sid="952444346067752" type="AJAX">
+                    <param id="0" name="Tag">&quot;conf&quot;</param>
+                    <param id="1" name="URL">Electron.GetAppPath &amp; &quot;/USV Player/conf.json&quot;</param>
+                </action>
                 <action id="9" name="Read" sid="386141769596643" type="Electron">
                     <param id="0" name="Tag">&quot;&quot;</param>
                     <param id="1" name="Path">CurrentPatch &amp; &quot;/dat.json&quot;</param>
@@ -103,6 +112,35 @@
                     </actions>
                 </event-block>
             </sub-events>
+        </event-block>
+        <event-block sid="287519117845397">
+            <conditions>
+                <condition id="0" name="On completed" sid="646637563474013" type="AJAX">
+                    <param id="0" name="Tag">&quot;conf&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="60" name="LoadJSON" sid="613196949526775" type="conf">
+                    <param id="0" name="JSON">AJAX.LastData</param>
+                    <param id="1" name="Reference point">0</param>
+                    <param id="2" name="Key {n}"></param>
+                </action>
+                <action id="-16" name="Wait" sid="325966839852165" type="System">
+                    <param id="0" name="Seconds">dt</param>
+                </action>
+                <action id="14" name="Log" sid="694680157442114" type="Browser">
+                    <param id="0" name="Type">0</param>
+                    <param id="1" name="Message">&quot;Player version: &quot; &amp; conf.Value(0,&quot;version&quot;)</param>
+                </action>
+                <action id="14" name="Log" sid="957016157537286" type="Browser">
+                    <param id="0" name="Type">0</param>
+                    <param id="1" name="Message">&quot;Platform logo: &quot; &amp; conf.Value(0,&quot;vendlogo&quot;)</param>
+                </action>
+                <action id="14" name="Log" sid="554858536947019" type="Browser">
+                    <param id="0" name="Type">0</param>
+                    <param id="1" name="Message">&quot;----- Done reading conf.json (Player settings/info) -----&quot;</param>
+                </action>
+            </actions>
         </event-block>
         <event-block sid="697035197485641">
             <conditions>
@@ -321,6 +359,11 @@
                 <action id="24" name="Get elements" sid="798121619180369" type="Interactive">
                     <param id="0" name="ID/Class">&quot;#dialversion&quot;</param>
                     <param id="1" name="Set">&quot;&lt;b&gt;Video version&lt;/b&gt;: &quot; &amp; dat.Value(0,&quot;version&quot;)</param>
+                    <param id="2" name="Append">&quot;&quot;</param>
+                </action>
+                <action id="24" name="Get elements" sid="826522215924254" type="Interactive">
+                    <param id="0" name="ID/Class">&quot;#dialpv&quot;</param>
+                    <param id="1" name="Set">&quot;&lt;b&gt;Version&lt;/b&gt;: &quot; &amp; conf.Value(0,&quot;version&quot;)</param>
                     <param id="2" name="Append">&quot;&quot;</param>
                 </action>
             </actions>
