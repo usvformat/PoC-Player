@@ -486,6 +486,26 @@
                         </action>
                     </actions>
                 </event-block>
+                <event-block sid="815186351181153">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="271741999286861" type="System">
+                            <param id="0" name="First value">dat.Value(0,&quot;lang&quot;)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">&quot;es&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="9" name="Read" sid="405095829355182" type="Electron">
+                            <param id="0" name="Tag">&quot;&quot;</param>
+                            <param id="1" name="Path">Electron.GetAppPath &amp; &quot;/USV Player/img/flags/es.svg&quot;</param>
+                            <param id="2" name="Encoding">&quot;utf8&quot;</param>
+                        </action>
+                        <action id="0" name="Request URL" sid="806825584441462" type="AJAX">
+                            <param id="0" name="Tag">&quot;flag&quot;</param>
+                            <param id="1" name="URL">Electron.GetAppPath &amp; &quot;/USV Player/img/flags/es.svg&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
             </sub-events>
         </event-block>
         <event-block sid="765703849425763">
