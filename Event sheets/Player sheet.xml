@@ -132,6 +132,10 @@
                     <param id="0" name="Type">0</param>
                     <param id="1" name="Message">&quot;Player version: &quot; &amp; conf.Value(0,&quot;version&quot;)</param>
                 </action>
+                <action id="14" name="Log" sid="390688486037648" type="Browser">
+                    <param id="0" name="Type">0</param>
+                    <param id="1" name="Message">conf.Value(0,&quot;copyright&quot;) &amp; &quot; USV format by Open Planet Initiative &lt;https://openplanetinitiative.github.io/&gt;.&quot;</param>
+                </action>
                 <action id="14" name="Log" sid="957016157537286" type="Browser">
                     <param id="0" name="Type">0</param>
                     <param id="1" name="Message">&quot;Platform logo: &quot; &amp; conf.Value(0,&quot;vendlogo&quot;)</param>
@@ -364,6 +368,11 @@
                 <action id="24" name="Get elements" sid="826522215924254" type="Interactive">
                     <param id="0" name="ID/Class">&quot;#dialpv&quot;</param>
                     <param id="1" name="Set">&quot;&lt;b&gt;Version&lt;/b&gt;: &quot; &amp; conf.Value(0,&quot;version&quot;)</param>
+                    <param id="2" name="Append">&quot;&quot;</param>
+                </action>
+                <action id="24" name="Get elements" sid="956269247215997" type="Interactive">
+                    <param id="0" name="ID/Class">&quot;#dialcopyright&quot;</param>
+                    <param id="1" name="Set">conf.Value(0,&quot;copyright&quot;) &amp; &quot; USV format by &lt;a href=https://openplanetinitiative.github.io/ target=blank&gt;Open Planet Initiative&lt;/a&gt;.&quot;</param>
                     <param id="2" name="Append">&quot;&quot;</param>
                 </action>
             </actions>
