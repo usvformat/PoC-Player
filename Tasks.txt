@@ -1,9 +1,10 @@
-location
 tags
 
 language flag
 classification
-play placeholder
+different dat.json info according to language
+merge languages.json into dat.json?
+merge also info.json??
 
 read languages.json or use it in dat.json
 
@@ -13,5 +14,7 @@ show message for fictional
 
 player libs
 player license
+
+play placeholder
 
 <div id="vthumbnail"></div><vplaceholder><vheader><!--<span id="avatar"></span>--><span id="vtitle"></span><span id="vurl"></span><div id="vinfo" onclick=C2('videoinfo');><i class="material-icons">info</i></div><span id="vflag"></span><span id="vclassification"></span></vheader></vplaceholder>
