@@ -1,8 +1,8 @@
+merge languages.json into dat.json?
+merge also info.json??
 language flag
 classification (parental rating)
 different dat.json info according to language
-merge languages.json into dat.json?
-merge also info.json??
 
 author type (optional), url and photo
 array on authorship type (footage, producer, music)
