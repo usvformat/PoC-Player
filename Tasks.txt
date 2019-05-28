@@ -1,4 +1,3 @@
-merge languages.json into dat.json?
 merge also info.json??
 language flag
 classification (parental rating)
