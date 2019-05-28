@@ -196,7 +196,7 @@
                 </action>
                 <action id="14" name="Log" sid="989298296695837" type="Browser">
                     <param id="0" name="Type">0</param>
-                    <param id="1" name="Message">&quot;Parental rating/Classification:&quot; &amp; newline &amp; &quot;Region: &quot; &amp; dat.Value(0,&quot;parentalrating&quot;,&quot;region&quot;) &amp; newline &amp; &quot;Type: &quot; &amp; dat.Value(0,&quot;parentalrating&quot;,&quot;type&quot;)</param>
+                    <param id="1" name="Message">&quot;Parental rating/Classification:&quot; &amp; dat.Value(0,&quot;parentalrating&quot;)</param>
                 </action>
                 <action id="14" name="Log" sid="103092866084870" type="Browser">
                     <param id="0" name="Type">0</param>
