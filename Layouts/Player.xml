@@ -277,7 +277,6 @@
     </layers>
     <nonworld-instances>
         <instance type="dat" uid="23" />
-        <instance type="info" uid="22" />
     </nonworld-instances>
     <effects />
 </c2layout>

@@ -1,4 +1,3 @@
-merge also info.json??
 language flag
 classification (parental rating)
 different dat.json info according to language

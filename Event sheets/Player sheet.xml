@@ -168,77 +168,29 @@
                     <param id="0" name="Type">0</param>
                     <param id="1" name="Message">&quot;TODO: classification and credits&quot;</param>
                 </action>
-                <action id="14" name="Log" sid="543045781335611" type="Browser">
-                    <param id="0" name="Type">0</param>
-                    <param id="1" name="Message">&quot;----- Done reading dat.json -----&quot;</param>
-                </action>
-                <action id="-16" name="Wait" sid="759364175935219" type="System">
-                    <param id="0" name="Seconds">dt</param>
-                </action>
-                <action disabled="1" id="-9" name="Set value" sid="793628870655907" type="System">
-                    <param id="0" name="Variable">InfoReadingStep</param>
-                    <param id="1" name="Value">1</param>
-                </action>
-                <action id="9" name="Read" sid="574578726127393" type="Electron">
-                    <param id="0" name="Tag">&quot;&quot;</param>
-                    <param id="1" name="Path">CurrentPatch &amp; &quot;/info.json&quot;</param>
-                    <param id="2" name="Encoding">&quot;utf8&quot;</param>
-                </action>
-                <action id="0" name="Request URL" sid="181734910456744" type="AJAX">
-                    <param id="0" name="Tag">&quot;info&quot;</param>
-                    <param id="1" name="URL">CurrentPatch &amp; &quot;/info.json&quot;</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block disabled="1" sid="291588234026061">
-            <conditions>
-                <condition id="-14" name="Compare variable" sid="999933759196252" type="System">
-                    <param id="0" name="Variable">InfoReadingStep</param>
-                    <param id="1" name="Comparison">0</param>
-                    <param id="2" name="Value">1</param>
-                </condition>
-                <condition id="-4" name="Trigger once while true" sid="700052129899367" type="System" />
-            </conditions>
-            <actions />
-        </event-block>
-        <event-block sid="797945828755046">
-            <conditions>
-                <condition id="0" name="On completed" sid="122798647360555" type="AJAX">
-                    <param id="0" name="Tag">&quot;info&quot;</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="60" name="LoadJSON" sid="686967026714118" type="info">
-                    <param id="0" name="JSON">AJAX.LastData</param>
-                    <param id="1" name="Reference point">0</param>
-                    <param id="2" name="Key {n}"></param>
-                </action>
-                <action id="-16" name="Wait" sid="783119439787599" type="System">
-                    <param id="0" name="Seconds">dt</param>
-                </action>
                 <action id="14" name="Log" sid="597643601337162" type="Browser">
                     <param id="0" name="Type">0</param>
-                    <param id="1" name="Message">&quot;USV version: &quot; &amp; info.Value(0,&quot;usv-version&quot;)</param>
+                    <param id="1" name="Message">&quot;USV version: &quot; &amp; dat.Value(0,&quot;usv-version&quot;)</param>
                 </action>
                 <action id="14" name="Log" sid="226526103745830" type="Browser">
                     <param id="0" name="Type">0</param>
-                    <param id="1" name="Message">&quot;Is paid/premium content: &quot; &amp; info.Value(0,&quot;premium&quot;)</param>
+                    <param id="1" name="Message">&quot;Is paid/premium content: &quot; &amp; dat.Value(0,&quot;premium&quot;)</param>
                 </action>
                 <action id="14" name="Log" sid="648197709852385" type="Browser">
                     <param id="0" name="Type">0</param>
-                    <param id="1" name="Message">&quot;Is fictional: &quot; &amp; info.Value(0,&quot;fiction&quot;)</param>
+                    <param id="1" name="Message">&quot;Is fictional: &quot; &amp; dat.Value(0,&quot;fiction&quot;)</param>
                 </action>
                 <action id="14" name="Log" sid="685402734864794" type="Browser">
                     <param id="0" name="Type">0</param>
-                    <param id="1" name="Message">&quot;License: &quot; &amp; info.Value(0,&quot;license&quot;) &amp; &quot; (print details and make accessible link for license)&quot;</param>
+                    <param id="1" name="Message">&quot;License: &quot; &amp; dat.Value(0,&quot;license&quot;) &amp; &quot; (print details and make accessible link for license)&quot;</param>
                 </action>
                 <action id="14" name="Log" sid="910150947068937" type="Browser">
                     <param id="0" name="Type">0</param>
-                    <param id="1" name="Message">&quot;Video version: &quot; &amp; info.Value(0,&quot;version&quot;)</param>
+                    <param id="1" name="Message">&quot;Video version: &quot; &amp; dat.Value(0,&quot;version&quot;)</param>
                 </action>
-                <action id="14" name="Log" sid="270513401644012" type="Browser">
+                <action id="14" name="Log" sid="543045781335611" type="Browser">
                     <param id="0" name="Type">0</param>
-                    <param id="1" name="Message">&quot;----- Done reading info.json -----&quot;</param>
+                    <param id="1" name="Message">&quot;----- Done reading dat.json -----&quot;</param>
                 </action>
                 <action id="-16" name="Wait" sid="877561773622783" type="System">
                     <param id="0" name="Seconds">dt</param>
@@ -353,22 +305,22 @@
                 </action>
                 <action id="24" name="Get elements" sid="614219715609929" type="Interactive">
                     <param id="0" name="ID/Class">&quot;#dialprem&quot;</param>
-                    <param id="1" name="Set">&quot;&lt;b&gt;Paid/premium&lt;/b&gt;: &quot; &amp; info.Value(0,&quot;premium&quot;)</param>
+                    <param id="1" name="Set">&quot;&lt;b&gt;Paid/premium&lt;/b&gt;: &quot; &amp; dat.Value(0,&quot;premium&quot;)</param>
                     <param id="2" name="Append">&quot;&quot;</param>
                 </action>
                 <action id="24" name="Get elements" sid="691835422164233" type="Interactive">
                     <param id="0" name="ID/Class">&quot;#dialfic&quot;</param>
-                    <param id="1" name="Set">&quot;&lt;b&gt;Fictional&lt;/b&gt;: &quot; &amp; info.Value(0,&quot;fiction&quot;)</param>
+                    <param id="1" name="Set">&quot;&lt;b&gt;Fictional&lt;/b&gt;: &quot; &amp; dat.Value(0,&quot;fiction&quot;)</param>
                     <param id="2" name="Append">&quot;&quot;</param>
                 </action>
                 <action id="24" name="Get elements" sid="799806128164415" type="Interactive">
                     <param id="0" name="ID/Class">&quot;#dialusversion&quot;</param>
-                    <param id="1" name="Set">&quot;&lt;b&gt;Used USV version&lt;/b&gt;: &quot; &amp; info.Value(0,&quot;usv-version&quot;)</param>
+                    <param id="1" name="Set">&quot;&lt;b&gt;Used USV version&lt;/b&gt;: &quot; &amp; dat.Value(0,&quot;usv-version&quot;)</param>
                     <param id="2" name="Append">&quot;&quot;</param>
                 </action>
                 <action id="24" name="Get elements" sid="798121619180369" type="Interactive">
                     <param id="0" name="ID/Class">&quot;#dialversion&quot;</param>
-                    <param id="1" name="Set">&quot;&lt;b&gt;Video version&lt;/b&gt;: &quot; &amp; info.Value(0,&quot;version&quot;)</param>
+                    <param id="1" name="Set">&quot;&lt;b&gt;Video version&lt;/b&gt;: &quot; &amp; dat.Value(0,&quot;version&quot;)</param>
                     <param id="2" name="Append">&quot;&quot;</param>
                 </action>
             </actions>
@@ -403,7 +355,7 @@
                         </action>
                         <action id="-9" name="Set value" sid="462798390886972" type="System">
                             <param id="0" name="Variable">Temp</param>
-                            <param id="1" name="Value">&quot;&lt;a target=blank href=&quot; &amp; info.Value(0,&quot;license&quot;) &amp; &quot; title=Open in browser&gt;&quot; &amp; info.Value(0,&quot;license&quot;) &amp; &quot;&lt;/a&gt;&quot;</param>
+                            <param id="1" name="Value">&quot;&lt;a target=blank href=&quot; &amp; dat.Value(0,&quot;license&quot;) &amp; &quot; title=Open in browser&gt;&quot; &amp; dat.Value(0,&quot;license&quot;) &amp; &quot;&lt;/a&gt;&quot;</param>
                         </action>
                         <action id="-16" name="Wait" sid="378728153176738" type="System">
                             <param id="0" name="Seconds">dt</param>
