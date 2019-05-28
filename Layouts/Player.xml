@@ -204,7 +204,7 @@
                         <iframe></iframe>
                         <url></url>
                         <html></html>
-                        <code>&lt;div id=&quot;vthumbnail&quot;&gt;&lt;/div&gt;&lt;vplaceholder&gt;&lt;vheader&gt;&lt;!--&lt;span id=&quot;avatar&quot;&gt;&lt;/span&gt;--&gt;&lt;span id=&quot;vtitle&quot;&gt;&lt;/span&gt;&lt;span id=&quot;vurl&quot;&gt;&lt;/span&gt;&lt;div id=&quot;vinfo&quot; onclick=C2(&apos;videoinfo&apos;);&gt;&lt;i class=&quot;material-icons&quot;&gt;info&lt;/i&gt;&lt;/div&gt;&lt;span id=&quot;vflag&quot;&gt;&lt;/span&gt;&lt;span </code>
+                        <code>&lt;div id=&quot;vthumbnail&quot;&gt;&lt;/div&gt;&lt;vplaceholder&gt;&lt;vheader&gt;&lt;!--&lt;span id=&quot;avatar&quot;&gt;&lt;/span&gt;--&gt;&lt;span id=&quot;vtitle&quot;&gt;&lt;/span&gt;&lt;span id=&quot;vurl&quot;&gt;&lt;/span&gt;&lt;div id=&quot;vinfo&quot; onclick=C2(&apos;videoinfo&apos;); title=&quot;Info/about (this video, USV player)&quot;&gt;&lt;i class=&quot;material-icons&quot;&gt;info&lt;/i&gt;&lt;/div&gt;&lt;span id=&quot;vflag&quot;&gt;&lt;/span&gt;&lt;span id=&quot;vclassification&quot;&gt;&lt;/span&gt;&lt;/vheader&gt;&lt;/vplaceholder&gt;</code>
                         <color></color>
                         <text-selectable>Yes</text-selectable>
                         <auto-font-size>Default</auto-font-size>
