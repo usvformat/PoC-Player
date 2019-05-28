@@ -1,7 +1,7 @@
 tags
 
 language flag
-classification
+classification (parental rating)
 different dat.json info according to language
 merge languages.json into dat.json?
 merge also info.json??
@@ -9,6 +9,13 @@ merge also info.json??
 read languages.json or use it in dat.json
 
 author type (optional), url and photo
+array on authorship type (footage, producer, music)
+genre (music)? category?
+year, contributing artists
+directors, producers, writers, publisher, content provider, media created, encoded by, promotion url, copyright
+lenght
+qualities
+mood
 
 show message for fictional
 
