@@ -47,3 +47,19 @@ vheader {
     font-size: 18px;
     cursor: pointer;
 }
+
+#vflag {
+    box-shadow: 2px 2px 4px #000000;
+    position: fixed;
+    top: 46px;
+    right: 16px;
+    font-size: 18px;
+    cursor: pointer;
+    width: 30px!important;
+    height: 20px!important;
+}
+
+#vflag svg {
+    width: 30px!important;
+    height: 20px!important;
+}

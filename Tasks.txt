@@ -1,8 +1,9 @@
-language flag
+language switch
 different dat.json info according to language
 classification (parental rating)
 
 author type (optional), url and photo
+default author photo
 array on authorship type (footage, producer, music)
 directors, producers, writers, publisher, content provider, media created, encoded
 genre (music)? category?
@@ -27,3 +28,4 @@ add vendlogo
 loading spinner (video infos, video itself)
 embed (like on scirr arc, and load c2 libs from FMWK CDN)
 read parameters from embed tag
+view signer API (when viewing on a chat, reg a view)

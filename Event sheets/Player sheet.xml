@@ -424,9 +424,97 @@
                             <param id="0" name="Variable">Temp</param>
                             <param id="1" name="Value">&quot;&quot;</param>
                         </action>
+                        <action id="-16" name="Wait" sid="826124023874996" type="System">
+                            <param id="0" name="Seconds">dt</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="215369994056050" type="System">
+                            <param id="0" name="Variable">InfoReadingStep</param>
+                            <param id="1" name="Value">3</param>
+                        </action>
                     </actions>
                 </event-block>
             </sub-events>
+        </event-block>
+        <event-block sid="592255504319864">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="394780916365401" type="System">
+                    <param id="0" name="Variable">InfoReadingStep</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">3</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="617824169514874" type="System" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="826110559838033">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="967481716618466" type="System">
+                            <param id="0" name="First value">dat.Value(0,&quot;lang&quot;)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">&quot;en-us&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="9" name="Read" sid="822162978662145" type="Electron">
+                            <param id="0" name="Tag">&quot;&quot;</param>
+                            <param id="1" name="Path">Electron.GetAppPath &amp; &quot;/USV Player/img/flags/us.svg&quot;</param>
+                            <param id="2" name="Encoding">&quot;utf8&quot;</param>
+                        </action>
+                        <action id="0" name="Request URL" sid="378201914688929" type="AJAX">
+                            <param id="0" name="Tag">&quot;flag&quot;</param>
+                            <param id="1" name="URL">Electron.GetAppPath &amp; &quot;/USV Player/img/flags/us.svg&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="806662350881803">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="494452471561180" type="System">
+                            <param id="0" name="First value">dat.Value(0,&quot;lang&quot;)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">&quot;pt-br&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="9" name="Read" sid="825458619015051" type="Electron">
+                            <param id="0" name="Tag">&quot;&quot;</param>
+                            <param id="1" name="Path">Electron.GetAppPath &amp; &quot;/USV Player/img/flags/br.svg&quot;</param>
+                            <param id="2" name="Encoding">&quot;utf8&quot;</param>
+                        </action>
+                        <action id="0" name="Request URL" sid="781791156669343" type="AJAX">
+                            <param id="0" name="Tag">&quot;flag&quot;</param>
+                            <param id="1" name="URL">Electron.GetAppPath &amp; &quot;/USV Player/img/flags/br.svg&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="765703849425763">
+            <conditions>
+                <condition id="0" name="On completed" sid="351480977925328" type="AJAX">
+                    <param id="0" name="Tag">&quot;flag&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="725041957992723" type="System">
+                    <param id="0" name="Variable">Temp</param>
+                    <param id="1" name="Value">&quot;&lt;tag title=Change language (&quot; &amp; dat.Value(0,&quot;lang&quot;) &amp; &quot;)&quot; &amp; &quot;&gt;&quot; &amp; AJAX.LastData &amp; &quot;&lt;/tag&gt;&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="757255754385779" type="System">
+                    <param id="0" name="Seconds">dt</param>
+                </action>
+                <action id="24" name="Get elements" sid="726797318245792" type="Interactive">
+                    <param id="0" name="ID/Class">&quot;#vflag&quot;</param>
+                    <param id="1" name="Set">Temp</param>
+                    <param id="2" name="Append">&quot;&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="407186468023499" type="System">
+                    <param id="0" name="Seconds">dt</param>
+                </action>
+                <action id="-9" name="Set value" sid="628598281560765" type="System">
+                    <param id="0" name="Variable">Temp</param>
+                    <param id="1" name="Value">&quot;&quot;</param>
+                </action>
+            </actions>
         </event-block>
         <event-block sid="683965671117110">
             <conditions>
