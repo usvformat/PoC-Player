@@ -13,6 +13,7 @@
         <plugin author="Scirra" id="AJAX" version="1">AJAX</plugin>
         <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
         <plugin author="Scirra" id="Button" version="1">Button</plugin>
+        <plugin author="Scirra" id="Dictionary" version="1">Dictionary</plugin>
         <plugin author="PlayLive" id="HTML_iFrame" version="1.419999957">HTML | iFrame</plugin>
         <plugin author="Yann Granjon" id="JSON" version="1.200000048">JSON</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
@@ -64,6 +65,9 @@
                 <plugin id="JSON" />
             </object-type>
             <object-type global="1" name="classification" sid="592859811801903">
+                <plugin id="JSON" />
+            </object-type>
+            <object-type global="1" name="classysinfo" sid="134325048791063">
                 <plugin id="JSON" />
             </object-type>
         </object-folder>
@@ -249,6 +253,9 @@
         </object-type>
         <object-type name="Interactive" sid="130947570813347">
             <plugin id="HTML_iFrame" />
+        </object-type>
+        <object-type global="1" name="Dictionary" sid="660263227040846">
+            <plugin id="Dictionary" />
         </object-type>
     </object-folder>
     <families />

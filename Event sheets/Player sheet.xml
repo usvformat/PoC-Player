@@ -314,8 +314,8 @@
             <actions>
                 <action id="24" name="Get elements" sid="524425924015345" type="Interactive">
                     <param id="0" name="ID/Class">&quot;#fb-root&quot;</param>
-                    <param id="1" name="Set">AJAX.LastData</param>
-                    <param id="2" name="Append">&quot;&quot;</param>
+                    <param id="1" name="Set">&quot;&quot;</param>
+                    <param id="2" name="Append">AJAX.LastData</param>
                 </action>
                 <action id="-16" name="Wait" sid="566428340423390" type="System">
                     <param id="0" name="Seconds">dt</param>
@@ -515,9 +515,16 @@
                 </condition>
             </conditions>
             <actions>
+                <action id="0" name="Add key" sid="787531115590981" type="Dictionary">
+                    <param id="0" name="Key">&quot;FlagIcon&quot;</param>
+                    <param id="1" name="Value">AJAX.LastData</param>
+                </action>
+                <action id="-16" name="Wait" sid="896925278130276" type="System">
+                    <param id="0" name="Seconds">dt</param>
+                </action>
                 <action id="-9" name="Set value" sid="725041957992723" type="System">
                     <param id="0" name="Variable">Temp</param>
-                    <param id="1" name="Value">&quot;&lt;tag title=Change language (&quot; &amp; dat.Value(0,&quot;lang&quot;) &amp; &quot;)&quot; &amp; &quot;&gt;&quot; &amp; AJAX.LastData &amp; &quot;&lt;/tag&gt;&quot;</param>
+                    <param id="1" name="Value">&quot;&lt;tag title=Change language (&quot; &amp; dat.Value(0,&quot;lang&quot;) &amp; &quot;)&quot; &amp; &quot;&gt;&quot; &amp; Dictionary.Get(&quot;FlagIcon&quot;) &amp; &quot;&lt;/tag&gt;&quot;</param>
                 </action>
                 <action id="-16" name="Wait" sid="757255754385779" type="System">
                     <param id="0" name="Seconds">dt</param>
@@ -550,6 +557,15 @@
                 <condition id="-4" name="Trigger once while true" sid="716070144534067" type="System" />
             </conditions>
             <actions>
+                <action id="9" name="Read" sid="838459809170709" type="Electron">
+                    <param id="0" name="Tag">&quot;&quot;</param>
+                    <param id="1" name="Path">Electron.GetAppPath &amp; &quot;/USV Player/rsc/classification/&quot; &amp; dat.Value(0,&quot;lang&quot;) &amp; &quot;/info.json&quot;</param>
+                    <param id="2" name="Encoding">&quot;utf8&quot;</param>
+                </action>
+                <action id="0" name="Request URL" sid="878774084610375" type="AJAX">
+                    <param id="0" name="Tag">&quot;ratingsysinfo&quot;</param>
+                    <param id="1" name="URL">Electron.GetAppPath &amp; &quot;/USV Player/rsc/classification/&quot; &amp; dat.Value(0,&quot;lang&quot;) &amp; &quot;/info.json&quot;</param>
+                </action>
                 <action id="9" name="Read" sid="292511250180376" type="Electron">
                     <param id="0" name="Tag">&quot;&quot;</param>
                     <param id="1" name="Path">Electron.GetAppPath &amp; &quot;/USV Player/rsc/classification/&quot; &amp; dat.Value(0,&quot;lang&quot;) &amp; &quot;/types/&quot; &amp; dat.Value(0,&quot;parentalrating&quot;) &amp; &quot;.json&quot;</param>
@@ -558,6 +574,20 @@
                 <action id="0" name="Request URL" sid="352144748344364" type="AJAX">
                     <param id="0" name="Tag">&quot;ratinginfo&quot;</param>
                     <param id="1" name="URL">Electron.GetAppPath &amp; &quot;/USV Player/rsc/classification/&quot; &amp; dat.Value(0,&quot;lang&quot;) &amp; &quot;/types/&quot; &amp; dat.Value(0,&quot;parentalrating&quot;) &amp; &quot;.json&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="374630842348887">
+            <conditions>
+                <condition id="0" name="On completed" sid="356861433969579" type="AJAX">
+                    <param id="0" name="Tag">&quot;ratingsysinfo&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="60" name="LoadJSON" sid="216352883961378" type="classysinfo">
+                    <param id="0" name="JSON">AJAX.LastData</param>
+                    <param id="1" name="Reference point">0</param>
+                    <param id="2" name="Key {n}"></param>
                 </action>
             </actions>
         </event-block>
@@ -572,6 +602,35 @@
                     <param id="0" name="JSON">AJAX.LastData</param>
                     <param id="1" name="Reference point">0</param>
                     <param id="2" name="Key {n}"></param>
+                </action>
+                <action id="-16" name="Wait" sid="222460921137551" type="System">
+                    <param id="0" name="Seconds">dt</param>
+                </action>
+                <action id="9" name="Read" sid="340195026393601" type="Electron">
+                    <param id="0" name="Tag">&quot;&quot;</param>
+                    <param id="1" name="Path">Electron.GetAppPath &amp; &quot;/USV Player/rsc/dialogs/classification.html&quot;</param>
+                    <param id="2" name="Encoding">&quot;utf8&quot;</param>
+                </action>
+                <action id="0" name="Request URL" sid="535885500217344" type="AJAX">
+                    <param id="0" name="Tag">&quot;classificationvdialog&quot;</param>
+                    <param id="1" name="URL">Electron.GetAppPath &amp; &quot;/USV Player/rsc/dialogs/classification.html&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="513410778616045">
+            <conditions>
+                <condition id="0" name="On completed" sid="485658732638316" type="AJAX">
+                    <param id="0" name="Tag">&quot;classificationvdialog&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="24" name="Get elements" sid="786589916197612" type="Interactive">
+                    <param id="0" name="ID/Class">&quot;#fb-root&quot;</param>
+                    <param id="1" name="Set">&quot;&quot;</param>
+                    <param id="2" name="Append">AJAX.LastData</param>
+                </action>
+                <action id="-16" name="Wait" sid="918426135243238" type="System">
+                    <param id="0" name="Seconds">dt</param>
                 </action>
                 <action id="-9" name="Set value" sid="790304954034691" type="System">
                     <param id="0" name="Variable">InfoReadingStep</param>
@@ -589,9 +648,6 @@
                 <condition id="-4" name="Trigger once while true" sid="535387741641900" type="System" />
             </conditions>
             <actions>
-                <action id="-16" name="Wait" sid="630830143384147" type="System">
-                    <param id="0" name="Seconds">dt</param>
-                </action>
                 <action id="9" name="Read" sid="100614485685448" type="Electron">
                     <param id="0" name="Tag">&quot;&quot;</param>
                     <param id="1" name="Path">Electron.GetAppPath &amp; &quot;/USV Player/rsc/classification/&quot; &amp; dat.Value(0,&quot;lang&quot;) &amp; &quot;/types/img/&quot; &amp; dat.Value(0,&quot;parentalrating&quot;) &amp; &quot;.svg&quot;</param>
@@ -610,12 +666,16 @@
                 </condition>
             </conditions>
             <actions>
-                <action id="-16" name="Wait" sid="232664339124240" type="System">
+                <action id="0" name="Add key" sid="365246325676948" type="Dictionary">
+                    <param id="0" name="Key">&quot;ClassiLogo&quot;</param>
+                    <param id="1" name="Value">AJAX.LastData</param>
+                </action>
+                <action id="-16" name="Wait" sid="340860619177091" type="System">
                     <param id="0" name="Seconds">dt</param>
                 </action>
                 <action id="-9" name="Set value" sid="990409586108927" type="System">
                     <param id="0" name="Variable">Temp</param>
-                    <param id="1" name="Value">&quot;&lt;tag title=Parental Rating/Classification: &quot; &amp; classification.Value(0,&quot;name&quot;) &amp; &quot; (click to know more)&quot; &amp; &quot;&gt;&quot; &amp; AJAX.LastData &amp; &quot;&lt;/tag&gt;&quot;</param>
+                    <param id="1" name="Value">&quot;&lt;tag title=Parental Rating/Classification: &quot; &amp; classification.Value(0,&quot;name&quot;) &amp; &quot; (click to know more)&quot; &amp; &quot;&gt;&quot; &amp; Dictionary.Get(&quot;ClassiLogo&quot;) &amp; &quot;&lt;/tag&gt;&quot;</param>
                 </action>
                 <action id="-16" name="Wait" sid="513064195653926" type="System">
                     <param id="0" name="Seconds">dt</param>
@@ -628,7 +688,94 @@
                 <action id="-16" name="Wait" sid="698305992463904" type="System">
                     <param id="0" name="Seconds">dt</param>
                 </action>
-                <action id="-9" name="Set value" sid="629847576676862" type="System">
+                <action id="-9" name="Set value" sid="874126361867029" type="System">
+                    <param id="0" name="Variable">Temp</param>
+                    <param id="1" name="Value">&quot;&lt;center&gt;&lt;tag style=width:50px&gt;&quot; &amp; Dictionary.Get(&quot;ClassiLogo&quot;) &amp; &quot;&lt;/tag&gt;&lt;/center&gt;&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="804220799235875" type="System">
+                    <param id="0" name="Seconds">dt</param>
+                </action>
+                <action id="24" name="Get elements" sid="323696990706910" type="Interactive">
+                    <param id="0" name="ID/Class">&quot;#dialclassilogo&quot;</param>
+                    <param id="1" name="Set">Temp</param>
+                    <param id="2" name="Append">&quot;&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="663300675614985" type="System">
+                    <param id="0" name="Seconds">dt</param>
+                </action>
+                <action id="24" name="Get elements" sid="430605413058357" type="Interactive">
+                    <param id="0" name="ID/Class">&quot;#dialclassiname&quot;</param>
+                    <param id="1" name="Set">&quot;&lt;center&gt;&quot; &amp; classification.Value(0,&quot;name&quot;)</param>
+                    <param id="2" name="Append">&quot;&quot;</param>
+                </action>
+                <action id="24" name="Get elements" sid="504703538130081" type="Interactive">
+                    <param id="0" name="ID/Class">&quot;#dialclassidesc&quot;</param>
+                    <param id="1" name="Set">classification.Value(0,&quot;description&quot;)</param>
+                    <param id="2" name="Append">&quot;&quot;</param>
+                </action>
+                <action id="-9" name="Set value" sid="406852376093225" type="System">
+                    <param id="0" name="Variable">Temp</param>
+                    <param id="1" name="Value">classysinfo.Value(0,&quot;description&quot;) &amp; &quot;&lt;br/&gt;&quot; &amp; &quot;&lt;tag title=&quot; &amp; dat.Value(0,&quot;lang&quot;) &amp; &quot;&gt;&quot; &amp; Dictionary.Get(&quot;FlagIcon&quot;) &amp; &quot;&lt;/tag&gt; &quot; &amp; classysinfo.Value(0,&quot;region&quot;) &amp; &quot;&lt;br/&gt;&lt;a target=blank href=&quot; &amp; classysinfo.Value(0,&quot;url&quot;) &amp; &quot;&gt;&quot; &amp; classysinfo.Value(0,&quot;url&quot;) &amp; &quot;&lt;/a&gt;&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="650777596212306" type="System">
+                    <param id="0" name="Seconds">dt</param>
+                </action>
+                <action id="24" name="Get elements" sid="776506530092776" type="Interactive">
+                    <param id="0" name="ID/Class">&quot;#dialclassysdesc&quot;</param>
+                    <param id="1" name="Set">Temp</param>
+                    <param id="2" name="Append">&quot;&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="966628762626385" type="System">
+                    <param id="0" name="Seconds">dt</param>
+                </action>
+                <action id="-9" name="Set value" sid="872265933726024" type="System">
+                    <param id="0" name="Variable">Temp</param>
+                    <param id="1" name="Value">&quot;&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="455094527922732" type="System">
+                    <param id="0" name="Seconds">dt</param>
+                </action>
+                <action id="9" name="Read" sid="130739159913490" type="Electron">
+                    <param id="0" name="Tag">&quot;&quot;</param>
+                    <param id="1" name="Path">Electron.GetAppPath &amp; &quot;/USV Player/rsc/classification/&quot; &amp; dat.Value(0,&quot;lang&quot;) &amp; &quot;/&quot; &amp; classysinfo.Value(0,&quot;logo&quot;)</param>
+                    <param id="2" name="Encoding">&quot;utf8&quot;</param>
+                </action>
+                <action id="0" name="Request URL" sid="578725549861941" type="AJAX">
+                    <param id="0" name="Tag">&quot;ratingsysicon&quot;</param>
+                    <param id="1" name="URL">Electron.GetAppPath &amp; &quot;/USV Player/rsc/classification/&quot; &amp; dat.Value(0,&quot;lang&quot;) &amp; &quot;/&quot; &amp; classysinfo.Value(0,&quot;logo&quot;)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="369865257195620">
+            <conditions>
+                <condition id="0" name="On completed" sid="906548712662063" type="AJAX">
+                    <param id="0" name="Tag">&quot;ratingsysicon&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Add key" sid="502165466742587" type="Dictionary">
+                    <param id="0" name="Key">&quot;ClassysLogo&quot;</param>
+                    <param id="1" name="Value">AJAX.LastData</param>
+                </action>
+                <action id="-16" name="Wait" sid="807158269682885" type="System">
+                    <param id="0" name="Seconds">dt</param>
+                </action>
+                <action id="-9" name="Set value" sid="847566228429322" type="System">
+                    <param id="0" name="Variable">Temp</param>
+                    <param id="1" name="Value">&quot;&lt;center&gt;&lt;tag style=width:50px title=&quot; &amp; classysinfo.Value(0,&quot;name&quot;) &amp; &quot;&gt;&quot; &amp; Dictionary.Get(&quot;ClassysLogo&quot;) &amp; &quot;&lt;/tag&gt;&lt;/center&gt;&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="685546960200516" type="System">
+                    <param id="0" name="Seconds">dt</param>
+                </action>
+                <action id="24" name="Get elements" sid="967009905364946" type="Interactive">
+                    <param id="0" name="ID/Class">&quot;#dialclassyslogo&quot;</param>
+                    <param id="1" name="Set">Temp</param>
+                    <param id="2" name="Append">&quot;&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="609278654872680" type="System">
+                    <param id="0" name="Seconds">dt</param>
+                </action>
+                <action id="-9" name="Set value" sid="747123891245426" type="System">
                     <param id="0" name="Variable">Temp</param>
                     <param id="1" name="Value">&quot;&quot;</param>
                 </action>
@@ -650,6 +797,27 @@
                     <actions>
                         <action id="17" name="Execute Javascript" sid="872590381358033" type="Browser">
                             <param id="0" name="Javascript">&quot;$(&apos;#infoDialog&apos;).modal(&apos;show&apos;)&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="804694547342635">
+            <conditions>
+                <condition id="3" name="On C2 Function" sid="577526138733756" type="Interactive" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="725942910645697">
+                    <conditions>
+                        <condition id="4" name="Compare C2 Function" sid="680046687291234" type="Interactive">
+                            <param id="0" name="C2">&quot;videoclassification&quot;</param>
+                            <param id="1" name="Case">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="17" name="Execute Javascript" sid="446567432016609" type="Browser">
+                            <param id="0" name="Javascript">&quot;$(&apos;#classificationDialog&apos;).modal(&apos;show&apos;)&quot;</param>
                         </action>
                     </actions>
                 </event-block>

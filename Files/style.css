@@ -55,12 +55,12 @@ vheader {
     right: 16px;
     font-size: 18px;
     cursor: pointer;
-    width: 30px!important;
+    width: 28px!important;
     height: 20px!important;
 }
 
 #vflag svg {
-    width: 30px!important;
+    width: 29px!important;
     height: 20px!important;
 }
 
@@ -76,6 +76,21 @@ vheader {
 }
 
 #vclassification svg {
+    width: 20px!important;
+    height: 20px!important;
+}
+
+#dialclassilogo svg {
+    width: 50px!important;
+    height: 50px!important;
+}
+
+#dialclassyslogo svg {
+    width: 150px!important;
+    height: 150px!important;
+}
+
+#dialclassysdesc svg {
     width: 20px!important;
     height: 20px!important;
 }
