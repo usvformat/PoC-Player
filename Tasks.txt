@@ -30,3 +30,6 @@ loading spinner (video infos, video itself)
 embed (like on scirr arc, and load c2 libs from FMWK CDN)
 read parameters from embed tag
 view signer API (when viewing on a chat, reg a view)
+
+docs:
+submit your language/classification rating

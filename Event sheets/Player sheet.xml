@@ -196,7 +196,7 @@
                 </action>
                 <action id="14" name="Log" sid="989298296695837" type="Browser">
                     <param id="0" name="Type">0</param>
-                    <param id="1" name="Message">&quot;Parental rating/Classification:&quot; &amp; dat.Value(0,&quot;parentalrating&quot;)</param>
+                    <param id="1" name="Message">&quot;Parental rating/Classification: &quot; &amp; dat.Value(0,&quot;parentalrating&quot;)</param>
                 </action>
                 <action id="14" name="Log" sid="103092866084870" type="Browser">
                     <param id="0" name="Type">0</param>
@@ -531,6 +531,104 @@
                     <param id="0" name="Seconds">dt</param>
                 </action>
                 <action id="-9" name="Set value" sid="628598281560765" type="System">
+                    <param id="0" name="Variable">Temp</param>
+                    <param id="1" name="Value">&quot;&quot;</param>
+                </action>
+                <action id="-9" name="Set value" sid="377902951133418" type="System">
+                    <param id="0" name="Variable">InfoReadingStep</param>
+                    <param id="1" name="Value">4</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="480172998861635">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="230050187252317" type="System">
+                    <param id="0" name="Variable">InfoReadingStep</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">4</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="716070144534067" type="System" />
+            </conditions>
+            <actions>
+                <action id="9" name="Read" sid="292511250180376" type="Electron">
+                    <param id="0" name="Tag">&quot;&quot;</param>
+                    <param id="1" name="Path">Electron.GetAppPath &amp; &quot;/USV Player/rsc/classification/&quot; &amp; dat.Value(0,&quot;lang&quot;) &amp; &quot;/types/&quot; &amp; dat.Value(0,&quot;parentalrating&quot;) &amp; &quot;.json&quot;</param>
+                    <param id="2" name="Encoding">&quot;utf8&quot;</param>
+                </action>
+                <action id="0" name="Request URL" sid="352144748344364" type="AJAX">
+                    <param id="0" name="Tag">&quot;ratinginfo&quot;</param>
+                    <param id="1" name="URL">Electron.GetAppPath &amp; &quot;/USV Player/rsc/classification/&quot; &amp; dat.Value(0,&quot;lang&quot;) &amp; &quot;/types/&quot; &amp; dat.Value(0,&quot;parentalrating&quot;) &amp; &quot;.json&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="241608891113385">
+            <conditions>
+                <condition id="0" name="On completed" sid="178732050383002" type="AJAX">
+                    <param id="0" name="Tag">&quot;ratinginfo&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="60" name="LoadJSON" sid="512850616723960" type="classification">
+                    <param id="0" name="JSON">AJAX.LastData</param>
+                    <param id="1" name="Reference point">0</param>
+                    <param id="2" name="Key {n}"></param>
+                </action>
+                <action id="-9" name="Set value" sid="790304954034691" type="System">
+                    <param id="0" name="Variable">InfoReadingStep</param>
+                    <param id="1" name="Value">5</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="446588297094441">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="401016003438562" type="System">
+                    <param id="0" name="Variable">InfoReadingStep</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">5</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="535387741641900" type="System" />
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" sid="630830143384147" type="System">
+                    <param id="0" name="Seconds">dt</param>
+                </action>
+                <action id="9" name="Read" sid="100614485685448" type="Electron">
+                    <param id="0" name="Tag">&quot;&quot;</param>
+                    <param id="1" name="Path">Electron.GetAppPath &amp; &quot;/USV Player/rsc/classification/&quot; &amp; dat.Value(0,&quot;lang&quot;) &amp; &quot;/types/img/&quot; &amp; dat.Value(0,&quot;parentalrating&quot;) &amp; &quot;.svg&quot;</param>
+                    <param id="2" name="Encoding">&quot;utf8&quot;</param>
+                </action>
+                <action id="0" name="Request URL" sid="413519994006193" type="AJAX">
+                    <param id="0" name="Tag">&quot;ratingicon&quot;</param>
+                    <param id="1" name="URL">Electron.GetAppPath &amp; &quot;/USV Player/rsc/classification/&quot; &amp; dat.Value(0,&quot;lang&quot;) &amp; &quot;/types/img/&quot; &amp; dat.Value(0,&quot;parentalrating&quot;) &amp; &quot;.svg&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="415451344129923">
+            <conditions>
+                <condition id="0" name="On completed" sid="854343050935829" type="AJAX">
+                    <param id="0" name="Tag">&quot;ratingicon&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" sid="232664339124240" type="System">
+                    <param id="0" name="Seconds">dt</param>
+                </action>
+                <action id="-9" name="Set value" sid="990409586108927" type="System">
+                    <param id="0" name="Variable">Temp</param>
+                    <param id="1" name="Value">&quot;&lt;tag title=Parental Rating/Classification: &quot; &amp; classification.Value(0,&quot;name&quot;) &amp; &quot; (click to know more)&quot; &amp; &quot;&gt;&quot; &amp; AJAX.LastData &amp; &quot;&lt;/tag&gt;&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="513064195653926" type="System">
+                    <param id="0" name="Seconds">dt</param>
+                </action>
+                <action id="24" name="Get elements" sid="151731652190029" type="Interactive">
+                    <param id="0" name="ID/Class">&quot;#vclassification&quot;</param>
+                    <param id="1" name="Set">Temp</param>
+                    <param id="2" name="Append">&quot;&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="698305992463904" type="System">
+                    <param id="0" name="Seconds">dt</param>
+                </action>
+                <action id="-9" name="Set value" sid="629847576676862" type="System">
                     <param id="0" name="Variable">Temp</param>
                     <param id="1" name="Value">&quot;&quot;</param>
                 </action>

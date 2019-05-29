@@ -63,3 +63,19 @@ vheader {
     width: 30px!important;
     height: 20px!important;
 }
+
+#vclassification {
+    box-shadow: 2px 2px 4px #000000;
+    position: fixed;
+    top: 76px;
+    right: 20px;
+    font-size: 18px;
+    cursor: pointer;
+    width: 20px!important;
+    height: 20px!important;
+}
+
+#vclassification svg {
+    width: 20px!important;
+    height: 20px!important;
+}

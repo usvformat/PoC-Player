@@ -232,6 +232,7 @@
     </layers>
     <nonworld-instances>
         <instance type="conf" uid="22" />
+        <instance type="classification" uid="26" />
     </nonworld-instances>
     <effects />
 </c2layout>
