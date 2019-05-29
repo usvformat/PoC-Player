@@ -1,4 +1,4 @@
-language flag on about menu
+language flag on about menu Dictionary.Get("FlagIcon")
 use dat link on video version
 classification reason, and if it is official
 show classification elements
