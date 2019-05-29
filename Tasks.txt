@@ -1,4 +1,3 @@
-alongside language, add country
 classification (parental rating)
 classification reason
 language flag on about menu
