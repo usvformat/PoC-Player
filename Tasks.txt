@@ -1,5 +1,7 @@
-classification reason
 language flag on about menu
+use dat link on video version
+classification reason, and if it is official
+show classification elements
 language switch
 different dat.json info according to language
 
@@ -27,6 +29,7 @@ play placeholder
 
 <div id="vthumbnail"></div><vplaceholder><vheader><!--<span id="avatar"></span>--><span id="vtitle"></span><span id="vurl"></span><div id="vinfo" onclick=C2('videoinfo'); title="Info/about (this video, USV player)"><i class="material-icons">info</i></div><span id="vflag"></span><span id="vclassification" onclick=C2('videoclassification');></span></vheader></vplaceholder>
 
+video's open badges
 show platform logo on info
 read conf.json languages and apply
 add vendlogo
