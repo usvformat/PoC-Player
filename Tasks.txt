@@ -1,9 +1,12 @@
+alongside language, add country
 classification (parental rating)
+classification reason
 language flag on about menu
 language switch
 different dat.json info according to language
 
-complete refactoring
+comments in events
+complete refactoring (deprecate Temp value)
 
 author type (optional), url and photo
 default author photo
@@ -26,6 +29,7 @@ play placeholder
 
 <div id="vthumbnail"></div><vplaceholder><vheader><!--<span id="avatar"></span>--><span id="vtitle"></span><span id="vurl"></span><div id="vinfo" onclick=C2('videoinfo'); title="Info/about (this video, USV player)"><i class="material-icons">info</i></div><span id="vflag"></span><span id="vclassification" onclick=C2('videoclassification');></span></vheader></vplaceholder>
 
+show platform logo on info
 read conf.json languages and apply
 add vendlogo
 loading spinner (video infos, video itself)
@@ -35,3 +39,6 @@ view signer API (when viewing on a chat, reg a view)
 
 docs:
 submit your language/classification rating
+
+dark theme
+themes for all svg icons
