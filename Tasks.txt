@@ -1,4 +1,5 @@
-language flag on about menu Dictionary.Get("FlagIcon")
+fix error of language flag/classification icons not loading
+language flag on about menu
 use dat link on video version
 classification reason, and if it is official
 show classification elements
