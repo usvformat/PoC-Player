@@ -28,20 +28,23 @@
                     <param id="0" name="Seconds">dt</param>
                 </action>
                 <action id="9" name="Read" sid="493183885767560" type="Electron">
-                    <param id="0" name="Tag">&quot;&quot;</param>
-                    <param id="1" name="Path">Electron.GetAppPath &amp; &quot;/USV Player/conf.json&quot;</param>
+                    <param id="0" name="Tag">&quot;conf&quot;</param>
+                    <param id="1" name="Path">Electron.GetAppPath &amp; &quot;/usv/conf.json&quot;</param>
                     <param id="2" name="Encoding">&quot;utf8&quot;</param>
                 </action>
-                <action id="0" name="Request URL" sid="952444346067752" type="AJAX">
+                <action disabled="1" id="0" name="Request URL" sid="952444346067752" type="AJAX">
                     <param id="0" name="Tag">&quot;conf&quot;</param>
-                    <param id="1" name="URL">Electron.GetAppPath &amp; &quot;/USV Player/conf.json&quot;</param>
+                    <param id="1" name="URL">&quot;flo-export/conf.json&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="586773124097815" type="System">
+                    <param id="0" name="Seconds">dt</param>
                 </action>
                 <action id="9" name="Read" sid="386141769596643" type="Electron">
-                    <param id="0" name="Tag">&quot;&quot;</param>
+                    <param id="0" name="Tag">&quot;dat&quot;</param>
                     <param id="1" name="Path">CurrentPatch &amp; &quot;/dat.json&quot;</param>
                     <param id="2" name="Encoding">&quot;utf8&quot;</param>
                 </action>
-                <action id="0" name="Request URL" sid="984589911842597" type="AJAX">
+                <action disabled="1" id="0" name="Request URL" sid="984589911842597" type="AJAX">
                     <param id="0" name="Tag">&quot;dat&quot;</param>
                     <param id="1" name="URL">CurrentPatch &amp; &quot;/dat.json&quot;</param>
                 </action>
@@ -115,13 +118,13 @@
         </event-block>
         <event-block sid="287519117845397">
             <conditions>
-                <condition id="0" name="On completed" sid="646637563474013" type="AJAX">
+                <condition id="3" name="On read success" sid="607671539620493" type="Electron">
                     <param id="0" name="Tag">&quot;conf&quot;</param>
                 </condition>
             </conditions>
             <actions>
                 <action id="60" name="LoadJSON" sid="613196949526775" type="conf">
-                    <param id="0" name="JSON">AJAX.LastData</param>
+                    <param id="0" name="JSON">Electron.LastReadAsync</param>
                     <param id="1" name="Reference point">0</param>
                     <param id="2" name="Key {n}"></param>
                 </action>
@@ -148,13 +151,13 @@
         </event-block>
         <event-block sid="697035197485641">
             <conditions>
-                <condition id="0" name="On completed" sid="128841198284464" type="AJAX">
+                <condition id="3" name="On read success" sid="644973131206468" type="Electron">
                     <param id="0" name="Tag">&quot;dat&quot;</param>
                 </condition>
             </conditions>
             <actions>
                 <action id="60" name="LoadJSON" sid="685420971992132" type="dat">
-                    <param id="0" name="JSON">AJAX.LastData</param>
+                    <param id="0" name="JSON">Electron.LastReadAsync</param>
                     <param id="1" name="Reference point">0</param>
                     <param id="2" name="Key {n}"></param>
                 </action>
@@ -182,11 +185,11 @@
                     <param id="1" name="Message">&quot;Thumbnail: &quot; &amp; dat.Value(0,&quot;thumbnail&quot;)</param>
                 </action>
                 <action id="9" name="Read" sid="760504503335551" type="Electron">
-                    <param id="0" name="Tag">&quot;&quot;</param>
+                    <param id="0" name="Tag">&quot;thumbnail&quot;</param>
                     <param id="1" name="Path">CurrentPatch &amp; &quot;/&quot; &amp; dat.Value(0,&quot;thumbnail&quot;)</param>
                     <param id="2" name="Encoding">&quot;utf8&quot;</param>
                 </action>
-                <action id="0" name="Request URL" sid="722483607788489" type="AJAX">
+                <action disabled="1" id="0" name="Request URL" sid="722483607788489" type="AJAX">
                     <param id="0" name="Tag">&quot;thumbnail&quot;</param>
                     <param id="1" name="URL">CurrentPatch &amp; &quot;/&quot; &amp; dat.Value(0,&quot;thumbnail&quot;)</param>
                 </action>
@@ -245,14 +248,14 @@
         </event-block>
         <event-block sid="156516851514509">
             <conditions>
-                <condition id="0" name="On completed" sid="542678225377253" type="AJAX">
+                <condition id="3" name="On read success" sid="141402511704262" type="Electron">
                     <param id="0" name="Tag">&quot;thumbnail&quot;</param>
                 </condition>
             </conditions>
             <actions>
                 <action id="24" name="Get elements" sid="130424166908399" type="Interactive">
                     <param id="0" name="ID/Class">&quot;#vthumbnail&quot;</param>
-                    <param id="1" name="Set">AJAX.LastData</param>
+                    <param id="1" name="Set">Electron.LastReadAsync</param>
                     <param id="2" name="Append">&quot;&quot;</param>
                 </action>
             </actions>
@@ -295,19 +298,24 @@
                     <param id="1" name="Value">&quot;l&quot;</param>
                 </action>
                 <action id="9" name="Read" sid="876077932959372" type="Electron">
-                    <param id="0" name="Tag">&quot;&quot;</param>
-                    <param id="1" name="Path">Electron.GetAppPath &amp; &quot;/USV Player/rsc/dialogs/info.html&quot;</param>
+                    <param id="0" name="Tag">&quot;infovdialog&quot;</param>
+                    <param id="1" name="Path">Electron.GetAppPath &amp; &quot;/usv/rsc/dialogs/info.html&quot;</param>
                     <param id="2" name="Encoding">&quot;utf8&quot;</param>
                 </action>
-                <action id="0" name="Request URL" sid="589121555940647" type="AJAX">
+                <action disabled="1" id="0" name="Request URL" sid="589121555940647" type="AJAX">
                     <param id="0" name="Tag">&quot;infovdialog&quot;</param>
-                    <param id="1" name="URL">Electron.GetAppPath &amp; &quot;/USV Player/rsc/dialogs/info.html&quot;</param>
+                    <param id="1" name="URL">&quot;flo-export/rsc/dialogs/info.html&quot;</param>
+                </action>
+                <action id="-9" name="Set value" sid="326447003893739" type="System">
+                    <param id="0" name="Variable">InfoReadingStep</param>
+                    <param id="1" name="Value">3</param>
                 </action>
             </actions>
         </event-block>
-        <event-block sid="973168136761405">
+        <comment>With issues, need to fix:</comment>
+        <event-block disabled="1" sid="973168136761405">
             <conditions>
-                <condition id="0" name="On completed" sid="438953779451226" type="AJAX">
+                <condition id="3" name="On read success" sid="776924268801580" type="Electron">
                     <param id="0" name="Tag">&quot;infovdialog&quot;</param>
                 </condition>
             </conditions>
@@ -315,69 +323,74 @@
                 <action id="24" name="Get elements" sid="524425924015345" type="Interactive">
                     <param id="0" name="ID/Class">&quot;#fb-root&quot;</param>
                     <param id="1" name="Set">&quot;&quot;</param>
-                    <param id="2" name="Append">AJAX.LastData</param>
+                    <param id="2" name="Append">Electron.LastReadAsync</param>
                 </action>
-                <action id="-16" name="Wait" sid="566428340423390" type="System">
+                <action disabled="1" id="24" name="Get elements" sid="597844721490146" type="Interactive">
+                    <param id="0" name="ID/Class">&quot;#fb-root&quot;</param>
+                    <param id="1" name="Set">&quot;&quot;</param>
+                    <param id="2" name="Append">Electron.ReadFile(Electron.GetAppPath &amp; &quot;/usv/rsc/dialogs/info.html&quot;)</param>
+                </action>
+                <action disabled="1" id="-16" name="Wait" sid="566428340423390" type="System">
                     <param id="0" name="Seconds">dt</param>
                 </action>
-                <action id="24" name="Get elements" sid="994413649384612" type="Interactive">
+                <action disabled="1" id="24" name="Get elements" sid="994413649384612" type="Interactive">
                     <param id="0" name="ID/Class">&quot;#dialtitle&quot;</param>
                     <param id="1" name="Set">&quot;&lt;b&gt;Title&lt;/b&gt;: &quot; &amp; dat.Value(0,&quot;title&quot;)</param>
                     <param id="2" name="Append">&quot;&quot;</param>
                 </action>
-                <action id="24" name="Get elements" sid="296935848310173" type="Interactive">
+                <action disabled="1" id="24" name="Get elements" sid="296935848310173" type="Interactive">
                     <param id="0" name="ID/Class">&quot;#dialdesc&quot;</param>
                     <param id="1" name="Set">dat.Value(0,&quot;description&quot;)</param>
                     <param id="2" name="Append">&quot;&quot;</param>
                 </action>
-                <action id="24" name="Get elements" sid="373016463676348" type="Interactive">
+                <action disabled="1" id="24" name="Get elements" sid="373016463676348" type="Interactive">
                     <param id="0" name="ID/Class">&quot;#dialthumb&quot;</param>
                     <param id="1" name="Set">&quot;&lt;b&gt;Thumbnail&lt;/b&gt;: &quot; &amp; dat.Value(0,&quot;thumbnail&quot;)</param>
                     <param id="2" name="Append">&quot;&quot;</param>
                 </action>
-                <action id="24" name="Get elements" sid="384390680876487" type="Interactive">
+                <action disabled="1" id="24" name="Get elements" sid="384390680876487" type="Interactive">
                     <param id="0" name="ID/Class">&quot;#dialocation&quot;</param>
                     <param id="1" name="Set">&quot;Latitude: &quot; &amp; dat.Value(0,&quot;location&quot;,&quot;latitude&quot;) &amp; &quot;, Longitude: &quot; &amp; dat.Value(0,&quot;location&quot;,&quot;longitude&quot;)</param>
                     <param id="2" name="Append">&quot;&quot;</param>
                 </action>
-                <action id="24" name="Get elements" sid="611927054879607" type="Interactive">
+                <action disabled="1" id="24" name="Get elements" sid="611927054879607" type="Interactive">
                     <param id="0" name="ID/Class">&quot;#dialmainlang&quot;</param>
                     <param id="1" name="Set">&quot;&lt;b&gt;Main language&lt;/b&gt;: &quot; &amp; dat.Value(0,&quot;lang&quot;)</param>
                     <param id="2" name="Append">&quot;&quot;</param>
                 </action>
-                <action id="24" name="Get elements" sid="614219715609929" type="Interactive">
+                <action disabled="1" id="24" name="Get elements" sid="614219715609929" type="Interactive">
                     <param id="0" name="ID/Class">&quot;#dialprem&quot;</param>
                     <param id="1" name="Set">&quot;&lt;b&gt;Paid/premium&lt;/b&gt;: &quot; &amp; dat.Value(0,&quot;premium&quot;)</param>
                     <param id="2" name="Append">&quot;&quot;</param>
                 </action>
-                <action id="24" name="Get elements" sid="691835422164233" type="Interactive">
+                <action disabled="1" id="24" name="Get elements" sid="691835422164233" type="Interactive">
                     <param id="0" name="ID/Class">&quot;#dialfic&quot;</param>
                     <param id="1" name="Set">&quot;&lt;b&gt;Fictional&lt;/b&gt;: &quot; &amp; dat.Value(0,&quot;fiction&quot;)</param>
                     <param id="2" name="Append">&quot;&quot;</param>
                 </action>
-                <action id="24" name="Get elements" sid="799806128164415" type="Interactive">
+                <action disabled="1" id="24" name="Get elements" sid="799806128164415" type="Interactive">
                     <param id="0" name="ID/Class">&quot;#dialusversion&quot;</param>
                     <param id="1" name="Set">&quot;&lt;b&gt;Used USV version&lt;/b&gt;: &quot; &amp; dat.Value(0,&quot;usv-version&quot;)</param>
                     <param id="2" name="Append">&quot;&quot;</param>
                 </action>
-                <action id="24" name="Get elements" sid="798121619180369" type="Interactive">
+                <action disabled="1" id="24" name="Get elements" sid="798121619180369" type="Interactive">
                     <param id="0" name="ID/Class">&quot;#dialversion&quot;</param>
                     <param id="1" name="Set">&quot;&lt;b&gt;Video version&lt;/b&gt;: &quot; &amp; dat.Value(0,&quot;version&quot;)</param>
                     <param id="2" name="Append">&quot;&quot;</param>
                 </action>
-                <action id="24" name="Get elements" sid="826522215924254" type="Interactive">
+                <action disabled="1" id="24" name="Get elements" sid="826522215924254" type="Interactive">
                     <param id="0" name="ID/Class">&quot;#dialpv&quot;</param>
                     <param id="1" name="Set">&quot;&lt;b&gt;Version&lt;/b&gt;: &quot; &amp; conf.Value(0,&quot;version&quot;)</param>
                     <param id="2" name="Append">&quot;&quot;</param>
                 </action>
-                <action id="24" name="Get elements" sid="956269247215997" type="Interactive">
+                <action disabled="1" id="24" name="Get elements" sid="956269247215997" type="Interactive">
                     <param id="0" name="ID/Class">&quot;#dialcopyright&quot;</param>
                     <param id="1" name="Set">conf.Value(0,&quot;copyright&quot;) &amp; &quot; USV format by &lt;a href=https://openplanetinitiative.github.io/ target=blank&gt;Open Planet Initiative&lt;/a&gt;.&quot;</param>
                     <param id="2" name="Append">&quot;&quot;</param>
                 </action>
             </actions>
             <sub-events>
-                <event-block sid="854988048706955">
+                <event-block disabled="1" sid="854988048706955">
                     <conditions>
                         <condition id="-14" name="Compare variable" sid="973736484777913" type="System">
                             <param id="0" name="Variable">Temp</param>
@@ -456,13 +469,13 @@
                     </conditions>
                     <actions>
                         <action id="9" name="Read" sid="822162978662145" type="Electron">
-                            <param id="0" name="Tag">&quot;&quot;</param>
-                            <param id="1" name="Path">Electron.GetAppPath &amp; &quot;/USV Player/img/flags/us.svg&quot;</param>
+                            <param id="0" name="Tag">&quot;flag&quot;</param>
+                            <param id="1" name="Path">Electron.GetAppPath &amp; &quot;/usv/img/flags/us.svg&quot;</param>
                             <param id="2" name="Encoding">&quot;utf8&quot;</param>
                         </action>
-                        <action id="0" name="Request URL" sid="378201914688929" type="AJAX">
+                        <action disabled="1" id="0" name="Request URL" sid="378201914688929" type="AJAX">
                             <param id="0" name="Tag">&quot;flag&quot;</param>
-                            <param id="1" name="URL">Electron.GetAppPath &amp; &quot;/USV Player/img/flags/us.svg&quot;</param>
+                            <param id="1" name="URL">&quot;flo-export/img/flags/us.svg&quot;</param>
                         </action>
                     </actions>
                 </event-block>
@@ -476,13 +489,13 @@
                     </conditions>
                     <actions>
                         <action id="9" name="Read" sid="825458619015051" type="Electron">
-                            <param id="0" name="Tag">&quot;&quot;</param>
-                            <param id="1" name="Path">Electron.GetAppPath &amp; &quot;/USV Player/img/flags/br.svg&quot;</param>
+                            <param id="0" name="Tag">&quot;flag&quot;</param>
+                            <param id="1" name="Path">Electron.GetAppPath &amp; &quot;/usv/img/flags/br.svg&quot;</param>
                             <param id="2" name="Encoding">&quot;utf8&quot;</param>
                         </action>
-                        <action id="0" name="Request URL" sid="781791156669343" type="AJAX">
+                        <action disabled="1" id="0" name="Request URL" sid="781791156669343" type="AJAX">
                             <param id="0" name="Tag">&quot;flag&quot;</param>
-                            <param id="1" name="URL">Electron.GetAppPath &amp; &quot;/USV Player/img/flags/br.svg&quot;</param>
+                            <param id="1" name="URL">&quot;flo-export/img/flags/br.svg&quot;</param>
                         </action>
                     </actions>
                 </event-block>
@@ -496,13 +509,13 @@
                     </conditions>
                     <actions>
                         <action id="9" name="Read" sid="405095829355182" type="Electron">
-                            <param id="0" name="Tag">&quot;&quot;</param>
-                            <param id="1" name="Path">Electron.GetAppPath &amp; &quot;/USV Player/img/flags/es.svg&quot;</param>
+                            <param id="0" name="Tag">&quot;flag&quot;</param>
+                            <param id="1" name="Path">Electron.GetAppPath &amp; &quot;/usv/img/flags/es.svg&quot;</param>
                             <param id="2" name="Encoding">&quot;utf8&quot;</param>
                         </action>
-                        <action id="0" name="Request URL" sid="806825584441462" type="AJAX">
+                        <action disabled="1" id="0" name="Request URL" sid="806825584441462" type="AJAX">
                             <param id="0" name="Tag">&quot;flag&quot;</param>
-                            <param id="1" name="URL">Electron.GetAppPath &amp; &quot;/USV Player/img/flags/es.svg&quot;</param>
+                            <param id="1" name="URL">&quot;flo-export/img/flags/es.svg&quot;</param>
                         </action>
                     </actions>
                 </event-block>
@@ -510,14 +523,14 @@
         </event-block>
         <event-block sid="765703849425763">
             <conditions>
-                <condition id="0" name="On completed" sid="351480977925328" type="AJAX">
+                <condition id="3" name="On read success" sid="333404908954973" type="Electron">
                     <param id="0" name="Tag">&quot;flag&quot;</param>
                 </condition>
             </conditions>
             <actions>
                 <action id="0" name="Add key" sid="787531115590981" type="Dictionary">
                     <param id="0" name="Key">&quot;FlagIcon&quot;</param>
-                    <param id="1" name="Value">AJAX.LastData</param>
+                    <param id="1" name="Value">Electron.LastReadAsync</param>
                 </action>
                 <action id="-16" name="Wait" sid="896925278130276" type="System">
                     <param id="0" name="Seconds">dt</param>
@@ -558,34 +571,34 @@
             </conditions>
             <actions>
                 <action id="9" name="Read" sid="838459809170709" type="Electron">
-                    <param id="0" name="Tag">&quot;&quot;</param>
-                    <param id="1" name="Path">Electron.GetAppPath &amp; &quot;/USV Player/rsc/classification/&quot; &amp; dat.Value(0,&quot;lang&quot;) &amp; &quot;/info.json&quot;</param>
+                    <param id="0" name="Tag">&quot;ratingsysinfo&quot;</param>
+                    <param id="1" name="Path">Electron.GetAppPath &amp; &quot;/usv/rsc/classification/&quot; &amp; dat.Value(0,&quot;lang&quot;) &amp; &quot;/info.json&quot;</param>
                     <param id="2" name="Encoding">&quot;utf8&quot;</param>
                 </action>
-                <action id="0" name="Request URL" sid="878774084610375" type="AJAX">
+                <action disabled="1" id="0" name="Request URL" sid="878774084610375" type="AJAX">
                     <param id="0" name="Tag">&quot;ratingsysinfo&quot;</param>
-                    <param id="1" name="URL">Electron.GetAppPath &amp; &quot;/USV Player/rsc/classification/&quot; &amp; dat.Value(0,&quot;lang&quot;) &amp; &quot;/info.json&quot;</param>
+                    <param id="1" name="URL">&quot;flo-export/rsc/classification/&quot; &amp; dat.Value(0,&quot;lang&quot;) &amp; &quot;/info.json&quot;</param>
                 </action>
                 <action id="9" name="Read" sid="292511250180376" type="Electron">
-                    <param id="0" name="Tag">&quot;&quot;</param>
-                    <param id="1" name="Path">Electron.GetAppPath &amp; &quot;/USV Player/rsc/classification/&quot; &amp; dat.Value(0,&quot;lang&quot;) &amp; &quot;/types/&quot; &amp; dat.Value(0,&quot;parentalrating&quot;) &amp; &quot;.json&quot;</param>
+                    <param id="0" name="Tag">&quot;ratinginfo&quot;</param>
+                    <param id="1" name="Path">Electron.GetAppPath &amp; &quot;/usv/rsc/classification/&quot; &amp; dat.Value(0,&quot;lang&quot;) &amp; &quot;/types/&quot; &amp; dat.Value(0,&quot;parentalrating&quot;) &amp; &quot;.json&quot;</param>
                     <param id="2" name="Encoding">&quot;utf8&quot;</param>
                 </action>
-                <action id="0" name="Request URL" sid="352144748344364" type="AJAX">
+                <action disabled="1" id="0" name="Request URL" sid="352144748344364" type="AJAX">
                     <param id="0" name="Tag">&quot;ratinginfo&quot;</param>
-                    <param id="1" name="URL">Electron.GetAppPath &amp; &quot;/USV Player/rsc/classification/&quot; &amp; dat.Value(0,&quot;lang&quot;) &amp; &quot;/types/&quot; &amp; dat.Value(0,&quot;parentalrating&quot;) &amp; &quot;.json&quot;</param>
+                    <param id="1" name="URL">&quot;flo-export/rsc/classification/&quot; &amp; dat.Value(0,&quot;lang&quot;) &amp; &quot;/types/&quot; &amp; dat.Value(0,&quot;parentalrating&quot;) &amp; &quot;.json&quot;</param>
                 </action>
             </actions>
         </event-block>
         <event-block sid="374630842348887">
             <conditions>
-                <condition id="0" name="On completed" sid="356861433969579" type="AJAX">
+                <condition id="3" name="On read success" sid="761542659235353" type="Electron">
                     <param id="0" name="Tag">&quot;ratingsysinfo&quot;</param>
                 </condition>
             </conditions>
             <actions>
                 <action id="60" name="LoadJSON" sid="216352883961378" type="classysinfo">
-                    <param id="0" name="JSON">AJAX.LastData</param>
+                    <param id="0" name="JSON">Electron.LastReadAsync</param>
                     <param id="1" name="Reference point">0</param>
                     <param id="2" name="Key {n}"></param>
                 </action>
@@ -593,13 +606,13 @@
         </event-block>
         <event-block sid="241608891113385">
             <conditions>
-                <condition id="0" name="On completed" sid="178732050383002" type="AJAX">
+                <condition id="3" name="On read success" sid="728895149240599" type="Electron">
                     <param id="0" name="Tag">&quot;ratinginfo&quot;</param>
                 </condition>
             </conditions>
             <actions>
                 <action id="60" name="LoadJSON" sid="512850616723960" type="classification">
-                    <param id="0" name="JSON">AJAX.LastData</param>
+                    <param id="0" name="JSON">Electron.LastReadAsync</param>
                     <param id="1" name="Reference point">0</param>
                     <param id="2" name="Key {n}"></param>
                 </action>
@@ -607,19 +620,19 @@
                     <param id="0" name="Seconds">dt</param>
                 </action>
                 <action id="9" name="Read" sid="340195026393601" type="Electron">
-                    <param id="0" name="Tag">&quot;&quot;</param>
-                    <param id="1" name="Path">Electron.GetAppPath &amp; &quot;/USV Player/rsc/dialogs/classification.html&quot;</param>
+                    <param id="0" name="Tag">&quot;classificationvdialog&quot;</param>
+                    <param id="1" name="Path">Electron.GetAppPath &amp; &quot;/usv/rsc/dialogs/classification.html&quot;</param>
                     <param id="2" name="Encoding">&quot;utf8&quot;</param>
                 </action>
-                <action id="0" name="Request URL" sid="535885500217344" type="AJAX">
+                <action disabled="1" id="0" name="Request URL" sid="535885500217344" type="AJAX">
                     <param id="0" name="Tag">&quot;classificationvdialog&quot;</param>
-                    <param id="1" name="URL">Electron.GetAppPath &amp; &quot;/USV Player/rsc/dialogs/classification.html&quot;</param>
+                    <param id="1" name="URL">&quot;flo-export/rsc/dialogs/classification.html&quot;</param>
                 </action>
             </actions>
         </event-block>
         <event-block sid="513410778616045">
             <conditions>
-                <condition id="0" name="On completed" sid="485658732638316" type="AJAX">
+                <condition id="3" name="On read success" sid="844667009697722" type="Electron">
                     <param id="0" name="Tag">&quot;classificationvdialog&quot;</param>
                 </condition>
             </conditions>
@@ -627,7 +640,7 @@
                 <action id="24" name="Get elements" sid="786589916197612" type="Interactive">
                     <param id="0" name="ID/Class">&quot;#fb-root&quot;</param>
                     <param id="1" name="Set">&quot;&quot;</param>
-                    <param id="2" name="Append">AJAX.LastData</param>
+                    <param id="2" name="Append">Electron.LastReadAsync</param>
                 </action>
                 <action id="-16" name="Wait" sid="918426135243238" type="System">
                     <param id="0" name="Seconds">dt</param>
@@ -649,26 +662,26 @@
             </conditions>
             <actions>
                 <action id="9" name="Read" sid="100614485685448" type="Electron">
-                    <param id="0" name="Tag">&quot;&quot;</param>
-                    <param id="1" name="Path">Electron.GetAppPath &amp; &quot;/USV Player/rsc/classification/&quot; &amp; dat.Value(0,&quot;lang&quot;) &amp; &quot;/types/img/&quot; &amp; dat.Value(0,&quot;parentalrating&quot;) &amp; &quot;.svg&quot;</param>
+                    <param id="0" name="Tag">&quot;ratingicon&quot;</param>
+                    <param id="1" name="Path">Electron.GetAppPath &amp; &quot;/usv/rsc/classification/&quot; &amp; dat.Value(0,&quot;lang&quot;) &amp; &quot;/types/img/&quot; &amp; dat.Value(0,&quot;parentalrating&quot;) &amp; &quot;.svg&quot;</param>
                     <param id="2" name="Encoding">&quot;utf8&quot;</param>
                 </action>
-                <action id="0" name="Request URL" sid="413519994006193" type="AJAX">
+                <action disabled="1" id="0" name="Request URL" sid="413519994006193" type="AJAX">
                     <param id="0" name="Tag">&quot;ratingicon&quot;</param>
-                    <param id="1" name="URL">Electron.GetAppPath &amp; &quot;/USV Player/rsc/classification/&quot; &amp; dat.Value(0,&quot;lang&quot;) &amp; &quot;/types/img/&quot; &amp; dat.Value(0,&quot;parentalrating&quot;) &amp; &quot;.svg&quot;</param>
+                    <param id="1" name="URL">&quot;flo-export/rsc/classification/&quot; &amp; dat.Value(0,&quot;lang&quot;) &amp; &quot;/types/img/&quot; &amp; dat.Value(0,&quot;parentalrating&quot;) &amp; &quot;.svg&quot;</param>
                 </action>
             </actions>
         </event-block>
         <event-block sid="415451344129923">
             <conditions>
-                <condition id="0" name="On completed" sid="854343050935829" type="AJAX">
+                <condition id="3" name="On read success" sid="355918694240191" type="Electron">
                     <param id="0" name="Tag">&quot;ratingicon&quot;</param>
                 </condition>
             </conditions>
             <actions>
                 <action id="0" name="Add key" sid="365246325676948" type="Dictionary">
                     <param id="0" name="Key">&quot;ClassiLogo&quot;</param>
-                    <param id="1" name="Value">AJAX.LastData</param>
+                    <param id="1" name="Value">Electron.LastReadAsync</param>
                 </action>
                 <action id="-16" name="Wait" sid="340860619177091" type="System">
                     <param id="0" name="Seconds">dt</param>
@@ -737,12 +750,12 @@
                 </action>
                 <action id="9" name="Read" sid="130739159913490" type="Electron">
                     <param id="0" name="Tag">&quot;&quot;</param>
-                    <param id="1" name="Path">Electron.GetAppPath &amp; &quot;/USV Player/rsc/classification/&quot; &amp; dat.Value(0,&quot;lang&quot;) &amp; &quot;/&quot; &amp; classysinfo.Value(0,&quot;logo&quot;)</param>
+                    <param id="1" name="Path">Electron.GetAppPath &amp; &quot;/usv/rsc/classification/&quot; &amp; dat.Value(0,&quot;lang&quot;) &amp; &quot;/&quot; &amp; classysinfo.Value(0,&quot;logo&quot;)</param>
                     <param id="2" name="Encoding">&quot;utf8&quot;</param>
                 </action>
                 <action id="0" name="Request URL" sid="578725549861941" type="AJAX">
                     <param id="0" name="Tag">&quot;ratingsysicon&quot;</param>
-                    <param id="1" name="URL">Electron.GetAppPath &amp; &quot;/USV Player/rsc/classification/&quot; &amp; dat.Value(0,&quot;lang&quot;) &amp; &quot;/&quot; &amp; classysinfo.Value(0,&quot;logo&quot;)</param>
+                    <param id="1" name="URL">&quot;flo-export/rsc/classification/&quot; &amp; dat.Value(0,&quot;lang&quot;) &amp; &quot;/&quot; &amp; classysinfo.Value(0,&quot;logo&quot;)</param>
                 </action>
             </actions>
         </event-block>
@@ -755,7 +768,7 @@
             <actions>
                 <action id="0" name="Add key" sid="502165466742587" type="Dictionary">
                     <param id="0" name="Key">&quot;ClassysLogo&quot;</param>
-                    <param id="1" name="Value">AJAX.LastData</param>
+                    <param id="1" name="Value">Electron.LastReadAsync</param>
                 </action>
                 <action id="-16" name="Wait" sid="807158269682885" type="System">
                     <param id="0" name="Seconds">dt</param>
