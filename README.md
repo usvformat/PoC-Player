@@ -1,4 +1,7 @@
 # USV PoC Player
+
+<img width="250px" src="icon.svg">
+
 This is a PoC (Proof-of-Concept) player for the Universal Smart Video [format](https://github.com/usvformat/USV-Format).
 
 ## Discussion topics
